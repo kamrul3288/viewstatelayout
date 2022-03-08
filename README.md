@@ -3,8 +3,6 @@
 
 Easy way to manage common state templates like loading, empty, error etc.!
 
-<img src="https://user-images.githubusercontent.com/27208120/157304915-e0c2584d-2037-45c0-ac54-23f70e02901a.png" width=300 />     <img src="https://user-images.githubusercontent.com/27208120/157304569-ea6ec69c-f565-453b-8125-09433fa48fa7.png" width=300 />     <img src="https://user-images.githubusercontent.com/27208120/157305301-7b2ab3fc-bf63-47ae-b365-7daa160210ab.png" width=300 />
-
 # How to
 Step 1. Add the JitPack repository to your build file
 ----------------------------------------------------
@@ -85,6 +83,9 @@ refreshCallback:()->Unit
 ```kotlin
 fun hideSimpleDataEmptyView()
 ```
+
+<img src="https://user-images.githubusercontent.com/27208120/157304915-e0c2584d-2037-45c0-ac54-23f70e02901a.png" width=300 />  <img src="https://user-images.githubusercontent.com/27208120/157304569-ea6ec69c-f565-453b-8125-09433fa48fa7.png" width=300 />     <img src="https://user-images.githubusercontent.com/27208120/157305301-7b2ab3fc-bf63-47ae-b365-7daa160210ab.png" width=300 />
+
 
 License
 -------
