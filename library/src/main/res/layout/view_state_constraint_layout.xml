@@ -19,6 +19,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             layout="@layout/simple_circular_progressbar"/>
 
+        <include
+            android:id="@+id/incSimpleErrorLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            layout="@layout/simple_network_error_layout"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

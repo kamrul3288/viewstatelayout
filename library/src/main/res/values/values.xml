@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="content_dc">Image</string>
-    <string name="error_network_title">Opps!</string>
-    <string name="button_refresh">Refresh</string>
-</resources>
