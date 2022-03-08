@@ -1,9 +1,7 @@
 package com.iamkamrul.library
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +46,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         title:String = context.getString(R.string.title_no_internet),
         message:String = context.getString(R.string.message_no_internet),
         buttonText:String = context.getString(R.string.button_refresh),
-        buttonDrawable:Int = R.drawable.bg_orange_border_radious_30,
+        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
         buttonTextColor:Int = R.color.white,
         refreshCallback:()->Unit
     ){
@@ -67,6 +65,41 @@ class ViewStateConstraintLayout : ConstraintLayout{
     //hide networkError
     fun hideSimpleNetworkError(){
         binding.incSimpleErrorLayout.simpleErrorLayout.isVisible = false
+    }
+
+
+
+    /*
+    * showing data empty or no search result layout
+    * @emptyImage is the data empty thumb image
+    * @message is the data empty message
+    * @buttonText is the button text
+    * @buttonDrawable is button drawable. for ex button bg
+    * @buttonTextColor button text color
+    * @refreshCallback send to refresh callback
+    **/
+    fun showSimpleDataEmptyView(
+        emptyImage:Int = R.drawable.ic_no_result,
+        message:String = context.getString(R.string.message_no_data_found),
+        buttonText:String = context.getString(R.string.button_refresh),
+        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
+        buttonTextColor:Int = R.color.white,
+        refreshCallback:()->Unit
+    ){
+        binding.incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = true
+        binding.incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
+        binding.incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
+        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
+        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
+        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(context,buttonTextColor))
+        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
+            refreshCallback.invoke()
+        }
+    }
+
+    //hide networkError
+    fun hideSimpleDataEmptyView(){
+        binding.incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = false
     }
 
 }

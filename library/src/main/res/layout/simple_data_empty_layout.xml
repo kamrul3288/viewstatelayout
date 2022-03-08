@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/simpleErrorLayout"
+    android:id="@+id/simpleDataEmptyLayout"
     android:clickable="true"
     android:focusable="true"
     android:visibility="gone"
@@ -20,34 +20,24 @@
 
 
         <ImageView
-            android:id="@+id/networkErrorIv"
-            app:srcCompat="@drawable/ic_no_internet"
+            android:id="@+id/dataEmptyIv"
+            app:srcCompat="@drawable/ic_no_result"
             android:contentDescription="@string/content_dc"
             android:scaleType="centerCrop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/networkErrorTitleTv"
+            android:id="@+id/dataEmptyMessageTv"
             android:textColor="@color/black"
             android:layout_marginTop="24dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="18sp"
             android:text="@string/title_no_internet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/networkErrorDesTv"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:textSize="16sp"
-            tools:text="@string/message_no_internet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
         <Button
-            android:id="@+id/networkErrorRefreshBtn"
+            android:id="@+id/dataEmptyRefreshBtn"
             android:layout_marginTop="24dp"
             android:text="@string/button_refresh"
             app:backgroundTint="@null"

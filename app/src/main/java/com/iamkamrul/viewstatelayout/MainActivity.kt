@@ -18,10 +18,23 @@ class MainActivity : AppCompatActivity() {
         binding.progressBtn.setOnClickListener {
             binding.viewState.setSimpleProgressBarStatus(true)
             binding.viewState.hideSimpleNetworkError()
+            binding.viewState.hideSimpleDataEmptyView()
         }
 
         binding.networkError.setOnClickListener {
             binding.viewState.setSimpleProgressBarStatus(false)
+            binding.viewState.hideSimpleDataEmptyView()
+            binding.viewState.showSimpleNetworkError {
+                Toast.makeText(applicationContext, "refresh Call", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.dataEmptyBtn.setOnClickListener {
+            binding.viewState.setSimpleProgressBarStatus(false)
+            binding.viewState.hideSimpleNetworkError()
+            binding.viewState.showSimpleDataEmptyView {
+                Toast.makeText(applicationContext, "data refresh Call", Toast.LENGTH_SHORT).show()
+            }
             binding.viewState.showSimpleNetworkError {
                 Toast.makeText(applicationContext, "refresh Call", Toast.LENGTH_SHORT).show()
             }

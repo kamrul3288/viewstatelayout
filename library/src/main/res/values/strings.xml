@@ -4,4 +4,5 @@
     <string name="message_no_internet">No Internet Connection. Please Check your connection.</string>
     <string name="content_dc">Image</string>
     <string name="button_refresh">Refresh</string>
+    <string name="message_no_data_found">No Data Found</string>
 </resources>
