@@ -17,7 +17,7 @@ Step 2. Add the dependency
 --------------------------
 ```
 dependencies {
-  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.0'
+  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.1'
 }
 ```
 
