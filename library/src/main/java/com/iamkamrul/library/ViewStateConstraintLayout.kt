@@ -7,9 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
-import com.iamkamrul.library.extension.lottieProgressBarStatus
-import com.iamkamrul.library.extension.showSimpleDataEmptyView
-import com.iamkamrul.library.extension.simpleProgressBarStatus
+import com.iamkamrul.library.extension.*
 
 class ViewStateConstraintLayout : ConstraintLayout{
 
@@ -25,7 +23,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     }
 
     // show and hide progressbar
-    fun setSimpleProgressBarStatus(
+    fun setSimpleProgressBarStatusLayout(
         progressStatus:Boolean,
         progressBarColor:Int = R.color.orange
     ){
@@ -36,7 +34,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     }
 
     // show and hide lottie progressbar
-    fun setLottieProgressBarStatus(
+    fun setLottieProgressBarStatusLayout(
         progressStatus:Boolean,
         lottieRes:Int = R.raw.animation_loading
     ){
@@ -56,7 +54,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @buttonTextColor button text color
     * @refreshCallback send to refresh callback
     **/
-    fun showSimpleNetworkError(
+    fun showSimpleNetworkErrorLayout(
         errorImage:Int = R.drawable.ic_no_internet,
         title:String = context.getString(R.string.title_no_internet),
         message:String = context.getString(R.string.message_no_internet),
@@ -65,21 +63,40 @@ class ViewStateConstraintLayout : ConstraintLayout{
         buttonTextColor:Int = R.color.white,
         refreshCallback:()->Unit
     ){
-        binding.incSimpleErrorLayout.simpleErrorLayout.isVisible = true
-        binding.incSimpleErrorLayout.networkErrorIv.setImageResource(errorImage)
-        binding.incSimpleErrorLayout.networkErrorTitleTv.text = title
-        binding.incSimpleErrorLayout.networkErrorDesTv.text = message
-        binding.incSimpleErrorLayout.networkErrorRefreshBtn.setBackgroundResource(buttonDrawable)
-        binding.incSimpleErrorLayout.networkErrorRefreshBtn.text = buttonText
-        binding.incSimpleErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(context,buttonTextColor))
-        binding.incSimpleErrorLayout.networkErrorRefreshBtn.setOnClickListener {
-            refreshCallback.invoke()
-        }
+       binding.showSimpleNetworkError(
+           errorImage = errorImage,
+           title = title,
+           message = message,
+           buttonText = buttonText,
+           buttonDrawable = buttonDrawable,
+           buttonTextColor = buttonTextColor,
+           refreshCallback = refreshCallback,
+       )
+    }
+
+    fun showLottieNetworkErrorLayout(
+        lottieRes:Int = R.raw.animation_no_internet,
+        title:String = context.getString(R.string.title_no_internet),
+        message:String = context.getString(R.string.message_no_internet),
+        buttonText:String = context.getString(R.string.button_refresh),
+        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
+        buttonTextColor:Int = R.color.white,
+        refreshCallback:()->Unit
+    ){
+        binding.showLottieNetworkError(
+            lottieRes = lottieRes,
+            title = title,
+            message = message,
+            buttonText = buttonText,
+            buttonDrawable = buttonDrawable,
+            buttonTextColor = buttonTextColor,
+            refreshCallback = refreshCallback,
+        )
     }
 
     //hide networkError
-    fun hideSimpleNetworkError(){
-        binding.incSimpleErrorLayout.simpleErrorLayout.isVisible = false
+    fun hideNetworkErrorLayout(){
+        binding.hideNetworkErrorLayout()
     }
 
 
@@ -93,7 +110,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @buttonTextColor button text color
     * @refreshCallback send to refresh callback
     **/
-    fun showSimpleDataEmptyView(
+    fun showSimpleDataEmptyLayout(
         emptyImage:Int = R.drawable.ic_no_result,
         message:String = context.getString(R.string.message_no_data_found),
         buttonText:String = context.getString(R.string.button_refresh),
@@ -111,9 +128,28 @@ class ViewStateConstraintLayout : ConstraintLayout{
         )
     }
 
+
+    fun showLottieDataEmptyLayout(
+        lottieRes:Int = R.raw.animation_no_data,
+        message:String = context.getString(R.string.message_no_data_found),
+        buttonText:String = context.getString(R.string.button_refresh),
+        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
+        buttonTextColor:Int = R.color.white,
+        refreshCallback:()->Unit
+    ){
+        binding.showLottieDataEmptyView(
+            lottieRes = lottieRes,
+            message = message,
+            buttonText = buttonText,
+            buttonDrawable = buttonDrawable,
+            buttonTextColor = buttonTextColor,
+            refreshCallback = refreshCallback,
+        )
+    }
+
     //hide networkError
-    fun hideSimpleDataEmptyView(){
-        binding.incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = false
+    fun hideDataEmptyLayout(){
+        binding.hideDataEmptyLayout()
     }
 
 }

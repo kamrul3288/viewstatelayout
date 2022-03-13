@@ -40,6 +40,16 @@
             layout="@layout/simple_network_error_layout"/>
 
         <include
+            android:id="@+id/incLottieErrorLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            layout="@layout/lottie_network_error_layout"/>
+
+        <include
             android:id="@+id/incSimpleDataEmptyLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -48,6 +58,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             layout="@layout/simple_data_empty_layout"/>
+
+        <include
+            android:id="@+id/incLottieDataEmptyLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            layout="@layout/lottie_data_empty_layout"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

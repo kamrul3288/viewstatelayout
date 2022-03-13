@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/simpleErrorLayout"
+    android:id="@+id/lottieErrorLayout"
     android:clickable="true"
     android:focusable="true"
     android:visibility="gone"
@@ -19,13 +19,11 @@
         android:layout_height="match_parent">
 
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/networkErrorIv"
-            app:srcCompat="@drawable/ic_no_internet"
-            android:contentDescription="@string/content_dc"
-            android:scaleType="centerCrop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:lottie_loop="true"
+            android:layout_width="300dp"
+            android:layout_height="200dp"/>
 
         <TextView
             android:id="@+id/networkErrorTitleTv"

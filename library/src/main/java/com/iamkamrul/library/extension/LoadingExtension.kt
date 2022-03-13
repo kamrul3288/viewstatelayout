@@ -14,8 +14,7 @@ fun ViewStateConstraintLayoutBinding.simpleProgressBarStatus(
     // hide all error layout
     progressBarConfig()
 
-    incSimpleProgress.progressBar.indeterminateTintList =
-        ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
+    incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
     incSimpleProgress.simpleProgressParent.isVisible = progressStatus
 }
 
@@ -28,8 +27,7 @@ fun ViewStateConstraintLayoutBinding.lottieProgressBarStatus(
     // hide all error layout
     progressBarConfig()
 
-
-    incLottieProgressLayout.lottieProgressBarParent.isVisible = progressStatus
+    incLottieProgressLayout.lottieProgressBarLayout.isVisible = progressStatus
     if (progressStatus){
         incLottieProgressLayout.lottieProgressBar.setAnimation(lottieRes)
         incLottieProgressLayout.lottieProgressBar.playAnimation()
@@ -45,7 +43,7 @@ private fun ViewStateConstraintLayoutBinding.progressBarConfig(){
 
 // hide progress bar when network error & data empty error showing
 fun ViewStateConstraintLayoutBinding.hideProgressLayout(){
-    incLottieProgressLayout.lottieProgressBarParent.isVisible = false
+    incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
     incLottieProgressLayout.lottieProgressBar.cancelAnimation()
     incSimpleProgress.simpleProgressParent.isVisible = false
 }
