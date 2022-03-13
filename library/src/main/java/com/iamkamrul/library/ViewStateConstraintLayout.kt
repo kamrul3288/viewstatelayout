@@ -1,13 +1,15 @@
 package com.iamkamrul.library
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.library.extension.lottieProgressBarStatus
+import com.iamkamrul.library.extension.showSimpleDataEmptyView
+import com.iamkamrul.library.extension.simpleProgressBarStatus
 
 class ViewStateConstraintLayout : ConstraintLayout{
 
@@ -24,11 +26,24 @@ class ViewStateConstraintLayout : ConstraintLayout{
 
     // show and hide progressbar
     fun setSimpleProgressBarStatus(
-        status:Boolean,
+        progressStatus:Boolean,
         progressBarColor:Int = R.color.orange
     ){
-        binding.incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(context,progressBarColor))
-        binding.incSimpleProgress.simpleProgressParent.isVisible = status
+       binding.simpleProgressBarStatus(
+           progressStatus = progressStatus,
+           progressBarColor = progressBarColor
+       )
+    }
+
+    // show and hide lottie progressbar
+    fun setLottieProgressBarStatus(
+        progressStatus:Boolean,
+        lottieRes:Int = R.raw.animation_loading
+    ){
+        binding.lottieProgressBarStatus(
+            progressStatus = progressStatus,
+            lottieRes = lottieRes
+        )
     }
 
     /*
@@ -86,15 +101,14 @@ class ViewStateConstraintLayout : ConstraintLayout{
         buttonTextColor:Int = R.color.white,
         refreshCallback:()->Unit
     ){
-        binding.incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = true
-        binding.incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
-        binding.incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
-        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
-        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
-        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(context,buttonTextColor))
-        binding.incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
-            refreshCallback.invoke()
-        }
+        binding.showSimpleDataEmptyView(
+            emptyImage = emptyImage,
+            message = message,
+            buttonText = buttonText,
+            buttonDrawable = buttonDrawable,
+            buttonTextColor = buttonTextColor,
+            refreshCallback = refreshCallback,
+        )
     }
 
     //hide networkError

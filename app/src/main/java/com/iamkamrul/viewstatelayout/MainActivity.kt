@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding.progressBtn.elevation = 0f
 
         binding.progressBtn.setOnClickListener {
-            binding.viewState.setSimpleProgressBarStatus(true)
+            binding.viewState.setLottieProgressBarStatus(true)
             binding.viewState.hideSimpleNetworkError()
             binding.viewState.hideSimpleDataEmptyView()
         }
