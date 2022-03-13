@@ -17,7 +17,7 @@ Step 2. Add the dependency
 --------------------------
 ```
 dependencies {
-  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.1'
+  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.3'
 }
 ```
 
@@ -52,7 +52,7 @@ binding.root.showSimpleNetworkError {
   // refresh button call
 }
 ```
-# API and customization
+# API(Also support lottie animation) and customization
 ```kotlin
 fun setSimpleProgressBarStatus(status:Boolean, progressBarColor:Int = R.color.orange)
 ```
