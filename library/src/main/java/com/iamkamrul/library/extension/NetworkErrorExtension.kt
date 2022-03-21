@@ -21,6 +21,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
 
 
     incSimpleErrorLayout.simpleErrorLayout.isVisible = true
+    incLottieErrorLayout.lottieErrorLayout.isVisible = false
     incSimpleErrorLayout.networkErrorIv.setImageResource(errorImage)
     incSimpleErrorLayout.networkErrorTitleTv.text = title
     incSimpleErrorLayout.networkErrorDesTv.text = message
@@ -46,6 +47,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     networkErrorConfig()
 
     incLottieErrorLayout.lottieErrorLayout.isVisible = true
+    incSimpleErrorLayout.simpleErrorLayout.isVisible = false
     incLottieErrorLayout.networkErrorIv.setAnimation(lottieRes)
     incLottieErrorLayout.networkErrorIv.playAnimation()
     incLottieErrorLayout.networkErrorTitleTv.text = title

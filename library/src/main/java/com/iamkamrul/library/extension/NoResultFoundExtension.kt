@@ -18,6 +18,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     dataEmptyConfig()
 
     incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = true
+    incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = false
     incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
     incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
@@ -41,6 +42,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     dataEmptyConfig()
 
     incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = true
+    incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = false
     incLottieDataEmptyLayout.dataEmptyIv.setAnimation(lottieRes)
     incLottieDataEmptyLayout.dataEmptyIv.playAnimation()
     incLottieDataEmptyLayout.dataEmptyMessageTv.text = message

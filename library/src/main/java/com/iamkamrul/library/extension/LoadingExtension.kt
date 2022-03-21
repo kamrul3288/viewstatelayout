@@ -16,6 +16,7 @@ fun ViewStateConstraintLayoutBinding.simpleProgressBarStatus(
 
     incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
     incSimpleProgress.simpleProgressParent.isVisible = progressStatus
+    incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
 }
 
 
@@ -28,6 +29,7 @@ fun ViewStateConstraintLayoutBinding.lottieProgressBarStatus(
     progressBarConfig()
 
     incLottieProgressLayout.lottieProgressBarLayout.isVisible = progressStatus
+    incSimpleProgress.simpleProgressParent.isVisible = false
     if (progressStatus){
         incLottieProgressLayout.lottieProgressBar.setAnimation(lottieRes)
         incLottieProgressLayout.lottieProgressBar.playAnimation()
