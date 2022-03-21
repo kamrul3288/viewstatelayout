@@ -9,6 +9,7 @@ import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     emptyImage:Int = R.drawable.ic_no_result,
     message:String,
+    refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
@@ -17,8 +18,13 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     // hide all error layout
     dataEmptyConfig()
 
+    // show no result simple layout
     incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = true
+    // hide no result lottie layout
     incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = false
+    // set refresh button visibility
+    incSimpleDataEmptyLayout.dataEmptyRefreshBtn.isVisible = refreshButtonVisibility
+
     incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
     incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
@@ -32,6 +38,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
 fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     lottieRes:Int,
     message:String,
+    refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
@@ -41,8 +48,13 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     // hide all error layout
     dataEmptyConfig()
 
+    // show no result lottie layout
     incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = true
+    // hide no result simple layout
     incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = false
+    // set refresh button visibility
+    incLottieDataEmptyLayout.dataEmptyRefreshBtn.isVisible = refreshButtonVisibility
+
     incLottieDataEmptyLayout.dataEmptyIv.setAnimation(lottieRes)
     incLottieDataEmptyLayout.dataEmptyIv.playAnimation()
     incLottieDataEmptyLayout.dataEmptyMessageTv.text = message

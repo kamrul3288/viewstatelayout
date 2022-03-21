@@ -4,8 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 import com.iamkamrul.library.extension.*
 
@@ -113,6 +111,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     fun showSimpleDataEmptyLayout(
         emptyImage:Int = R.drawable.ic_no_result,
         message:String = context.getString(R.string.message_no_data_found),
+        refreshButtonVisibility:Boolean = true,
         buttonText:String = context.getString(R.string.button_refresh),
         buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
         buttonTextColor:Int = R.color.white,
@@ -121,6 +120,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         binding.showSimpleDataEmptyView(
             emptyImage = emptyImage,
             message = message,
+            refreshButtonVisibility = refreshButtonVisibility,
             buttonText = buttonText,
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
@@ -132,6 +132,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     fun showLottieDataEmptyLayout(
         lottieRes:Int = R.raw.animation_no_data,
         message:String = context.getString(R.string.message_no_data_found),
+        refreshButtonVisibility:Boolean = true,
         buttonText:String = context.getString(R.string.button_refresh),
         buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
         buttonTextColor:Int = R.color.white,
@@ -140,6 +141,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         binding.showLottieDataEmptyView(
             lottieRes = lottieRes,
             message = message,
+            refreshButtonVisibility = refreshButtonVisibility,
             buttonText = buttonText,
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
