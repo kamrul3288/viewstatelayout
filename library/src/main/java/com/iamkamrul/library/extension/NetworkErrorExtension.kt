@@ -11,6 +11,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
     errorImage:Int,
     title:String,
     message:String,
+    refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
@@ -19,9 +20,13 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
     // hide all error layout
     networkErrorConfig()
 
-
+    // show simple network error layout
     incSimpleErrorLayout.simpleErrorLayout.isVisible = true
+    // hide lottie network error layout
     incLottieErrorLayout.lottieErrorLayout.isVisible = false
+    //set refresh button visibility
+    incSimpleErrorLayout.networkErrorRefreshBtn.isVisible = refreshButtonVisibility
+
     incSimpleErrorLayout.networkErrorIv.setImageResource(errorImage)
     incSimpleErrorLayout.networkErrorTitleTv.text = title
     incSimpleErrorLayout.networkErrorDesTv.text = message
@@ -38,6 +43,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     @RawRes lottieRes:Int,
     title:String,
     message:String,
+    refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
@@ -46,8 +52,13 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     // hide all error layout
     networkErrorConfig()
 
+    // show lottie network error layout
     incLottieErrorLayout.lottieErrorLayout.isVisible = true
+    // hide simple network error layout
     incSimpleErrorLayout.simpleErrorLayout.isVisible = false
+    //set refresh button visibility
+    incLottieErrorLayout.networkErrorRefreshBtn.isVisible = refreshButtonVisibility
+
     incLottieErrorLayout.networkErrorIv.setAnimation(lottieRes)
     incLottieErrorLayout.networkErrorIv.playAnimation()
     incLottieErrorLayout.networkErrorTitleTv.text = title
