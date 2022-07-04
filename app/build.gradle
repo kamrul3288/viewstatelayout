@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 android {
     compileSdk AppConfig.compileSdkVersion
@@ -36,6 +37,9 @@ dependencies {
     implementation AppDependencies.appcompat
     implementation AppDependencies.material
     implementation AppDependencies.constraint_layout
+
+    implementation AppDependencies.navigationFragment
+    implementation AppDependencies.navigationUi
 
     testImplementation AppDependencies.junit
     androidTestImplementation AppDependencies.extJunit

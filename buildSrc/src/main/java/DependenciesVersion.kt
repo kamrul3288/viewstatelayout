@@ -7,6 +7,7 @@ object DependenciesVersion {
     const val activity_version = "1.4.0"
     const val fragment_version = "1.4.0"
     const val lottie_version = "5.0.3"
+    const val navigationVersion = "2.4.2"
 
     const val junit_version = "4.13.2"
     const val junit_ext_version = "1.1.3"

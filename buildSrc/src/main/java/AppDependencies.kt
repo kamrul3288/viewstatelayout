@@ -9,6 +9,8 @@ object AppDependencies {
     const val activity = "androidx.activity:activity-ktx:${DependenciesVersion.activity_version}"
     const val cardView = "androidx.cardview:cardview:${DependenciesVersion.card_view_version}"
     const val lottie = "com.airbnb.android:lottie:${DependenciesVersion.lottie_version}"
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${DependenciesVersion.navigationVersion}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${DependenciesVersion.navigationVersion}"
 
 
     const val junit = "junit:junit:${DependenciesVersion.junit_version}"
