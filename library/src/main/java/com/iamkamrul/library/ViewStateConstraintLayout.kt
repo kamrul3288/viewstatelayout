@@ -3,6 +3,9 @@ package com.iamkamrul.library
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
+import androidx.annotation.RawRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 import com.iamkamrul.library.extension.*
@@ -23,7 +26,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     // show and hide progressbar
     fun setSimpleProgressBarStatusLayout(
         progressStatus:Boolean,
-        progressBarColor:Int = R.color.orange
+        progressBarColor:Int = ViewStateLayoutConfig.progressBarColor
     ){
        binding.simpleProgressBarStatus(
            progressStatus = progressStatus,
@@ -34,7 +37,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     // show and hide lottie progressbar
     fun setLottieProgressBarStatusLayout(
         progressStatus:Boolean,
-        lottieRes:Int = R.raw.animation_loading
+        lottieRes:Int = ViewStateLayoutConfig.progressBarLottie
     ){
         binding.lottieProgressBarStatus(
             progressStatus = progressStatus,
@@ -53,45 +56,57 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @refreshCallback send to refresh callback
     **/
     fun showSimpleNetworkErrorLayout(
-        errorImage:Int = R.drawable.ic_no_internet,
-        title:String = context.getString(R.string.title_no_internet),
-        message:String = context.getString(R.string.message_no_internet),
+        @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImage,
+        title:String = "",
+        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
+        message:String = "",
+        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = context.getString(R.string.button_refresh),
-        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-        buttonTextColor:Int = R.color.white,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
+        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
        binding.showSimpleNetworkError(
            errorImage = errorImage,
            title = title,
+           titleTextFontSize = titleTextFontSize,
            message = message,
+           messageTextFontSize = messageTextFontSize,
            refreshButtonVisibility = refreshButtonVisibility,
            buttonText = buttonText,
            buttonDrawable = buttonDrawable,
+           buttonStartDrawable = buttonStartDrawable,
            buttonTextColor = buttonTextColor,
            refreshCallback = refreshCallback,
        )
     }
 
     fun showLottieNetworkErrorLayout(
-        lottieRes:Int = R.raw.animation_no_internet,
-        title:String = context.getString(R.string.title_no_internet),
-        message:String = context.getString(R.string.message_no_internet),
+        @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImage,
+        title:String = "",
+        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
+        message:String = "",
+        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = context.getString(R.string.button_refresh),
-        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-        buttonTextColor:Int = R.color.white,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
+        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
         binding.showLottieNetworkError(
             lottieRes = lottieRes,
             title = title,
+            titleTextFontSize = titleTextFontSize,
             refreshButtonVisibility = refreshButtonVisibility,
             message = message,
+            messageTextFontSize= messageTextFontSize,
             buttonText = buttonText,
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
+            buttonStartDrawable = buttonStartDrawable,
             refreshCallback = refreshCallback,
         )
     }

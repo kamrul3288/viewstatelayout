@@ -33,7 +33,10 @@ class ViewStateLayoutExampleFragment : Fragment() {
         }
 
         binding.networkError.setOnClickListener {
-            binding.viewState.showSimpleNetworkErrorLayout {
+            binding.viewState.showSimpleNetworkErrorLayout(
+                title = "Something went wrong",
+                message = "Check your network connection"
+            ) {
                 Toast.makeText(requireContext(), "refresh Call", Toast.LENGTH_SHORT).show()
             }
         }
@@ -44,8 +47,6 @@ class ViewStateLayoutExampleFragment : Fragment() {
             }
 
         }
-
-
 
         binding.lottieProgressBtn.setOnClickListener {
             binding.viewState.setLottieProgressBarStatusLayout(true)

@@ -3,7 +3,7 @@ package com.iamkamrul.library.extension
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.library.R
-import com.iamkamrul.library.constant.ViewStateConfig
+import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 
 fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
@@ -62,7 +62,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
-        if (ViewStateConfig.refreshButtonViewSateManageFlag){
+        if (ViewStateLayoutConfig.refreshButtonViewSateManageFlag){
             hideDataEmptyLayout()
         }
         refreshCallback.invoke()

@@ -5,7 +5,7 @@
     android:id="@+id/simpleErrorLayout"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="gone"
+    android:visibility="visible"
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -33,8 +33,9 @@
             android:layout_marginTop="24dp"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:gravity="center"
             android:text="@string/title_no_internet"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
@@ -43,18 +44,21 @@
             android:gravity="center"
             android:textSize="16sp"
             tools:text="@string/message_no_internet"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/networkErrorRefreshBtn"
+            android:paddingHorizontal="60dp"
             android:layout_marginTop="24dp"
             android:text="@string/button_refresh"
             app:backgroundTint="@null"
+            android:gravity="center"
             android:textAllCaps="false"
+            app:iconGravity="textStart"
             android:textColor="@color/white"
             android:background="@drawable/bg_orange_border_radius_30"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
