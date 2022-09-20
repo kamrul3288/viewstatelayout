@@ -1,5 +1,5 @@
 # ViewStateLayout
-[![](https://jitpack.io/v/kamrul3288/ViewStateLayout.svg)](https://jitpack.io/#kamrul3288/ViewStateLayout)
+[![](https://jitpack.io/v/kamrul3288/ViewStateLayout.svg)](https://github.com/kamrul3288/ViewStateLayout)
 
 Easy way to manage common state templates like loading, empty, error etc.!
 
@@ -17,7 +17,7 @@ Step 2. Add the dependency
 --------------------------
 ```
 dependencies {
-  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.4'
+  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.5'
 }
 ```
 
