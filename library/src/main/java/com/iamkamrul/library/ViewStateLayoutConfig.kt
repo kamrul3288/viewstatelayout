@@ -5,7 +5,7 @@ object ViewStateLayoutConfig {
     var networkErrorMessageTextSize:Float = 16.0f
 
     var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
-    var networkRetryButtonTextColor = R.color.white
+    var networkButtonTextColor = R.color.white
 
     var networkErrorImage = R.drawable.ic_no_internet
     var networkErrorLottieImage = R.raw.animation_no_internet
@@ -14,7 +14,7 @@ object ViewStateLayoutConfig {
     var dataEmptyTitleTextSize:Float = 22.0f
     var dataEmptyMessageTextSize:Float = 16.0f
 
-    var dataEmptyRetryButtonBg = R.drawable.bg_orange_border_radius_30
+    var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
     var dataEmptyButtonTextColor = R.color.white
 
     var dataEmptyImage = R.drawable.ic_no_result
@@ -25,7 +25,7 @@ object ViewStateLayoutConfig {
 
     var refreshButtonViewSateManageFlag = true
 
-    var dataEmptyRefreshButtonText = "Refresh"
+    var dataEmptyButtonText = "Refresh"
     var networkErrorButtonText = "Refresh"
 
 }

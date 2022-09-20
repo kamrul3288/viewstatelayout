@@ -65,7 +65,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
-        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
+        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
@@ -93,7 +93,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
-        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
+        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
@@ -135,8 +135,8 @@ class ViewStateConstraintLayout : ConstraintLayout{
         message:String = "",
         messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyRefreshButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyRetryButtonBg,
+        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBg,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
@@ -164,8 +164,8 @@ class ViewStateConstraintLayout : ConstraintLayout{
         message:String = "",
         messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyRefreshButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyRetryButtonBg,
+        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBg,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit

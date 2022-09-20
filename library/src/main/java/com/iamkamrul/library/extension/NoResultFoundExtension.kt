@@ -30,7 +30,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
 
     //title and message visibility
     incSimpleDataEmptyLayout.dataEmptyTitleTv.isVisible = title.isNotEmpty()
-    incSimpleDataEmptyLayout.dataEmptyMessageTv.isVisible = title.isNotEmpty()
+    incSimpleDataEmptyLayout.dataEmptyMessageTv.isVisible = message.isNotEmpty()
 
     //title and message font size
     incSimpleDataEmptyLayout.dataEmptyTitleTv.textSize = titleTextFontSize
@@ -38,6 +38,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
 
 
     incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
+    incSimpleDataEmptyLayout.dataEmptyTitleTv.text = title
     incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
@@ -76,7 +77,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
 
     //title and message visibility
     incLottieDataEmptyLayout.dataEmptyTitleTv.isVisible = title.isNotEmpty()
-    incLottieDataEmptyLayout.dataEmptyMessageTv.isVisible = title.isNotEmpty()
+    incLottieDataEmptyLayout.dataEmptyMessageTv.isVisible = message.isNotEmpty()
 
     //title and message font size
     incLottieDataEmptyLayout.dataEmptyTitleTv.textSize = titleTextFontSize
@@ -84,6 +85,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
 
     incLottieDataEmptyLayout.dataEmptyIv.setAnimation(lottieRes)
     incLottieDataEmptyLayout.dataEmptyIv.playAnimation()
+    incLottieDataEmptyLayout.dataEmptyTitleTv.text = title
     incLottieDataEmptyLayout.dataEmptyMessageTv.text = message
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText

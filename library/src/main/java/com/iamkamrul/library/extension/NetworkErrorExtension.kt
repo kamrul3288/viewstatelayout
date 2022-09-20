@@ -31,7 +31,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
 
     //title and message visibility
     incSimpleErrorLayout.networkErrorTitleTv.isVisible = title.isNotEmpty()
-    incSimpleErrorLayout.networkErrorDesTv.isVisible = title.isNotEmpty()
+    incSimpleErrorLayout.networkErrorDesTv.isVisible = message.isNotEmpty()
 
     //title and message font size
     incSimpleErrorLayout.networkErrorTitleTv.textSize = titleTextFontSize
@@ -78,7 +78,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
 
     //title and message visibility
     incLottieErrorLayout.networkErrorTitleTv.isVisible = title.isNotEmpty()
-    incLottieErrorLayout.networkErrorDesTv.isVisible = title.isNotEmpty()
+    incLottieErrorLayout.networkErrorDesTv.isVisible = message.isNotEmpty()
 
     //title and message font size
     incLottieErrorLayout.networkErrorTitleTv.textSize = titleTextFontSize
