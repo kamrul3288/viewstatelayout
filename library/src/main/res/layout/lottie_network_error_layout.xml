@@ -5,7 +5,7 @@
     android:id="@+id/lottieErrorLayout"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="visible"
+    android:visibility="gone"
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -49,11 +49,12 @@
             android:id="@+id/networkErrorRefreshBtn"
             android:layout_marginTop="24dp"
             android:text="@string/button_refresh"
+            android:paddingHorizontal="60dp"
             app:backgroundTint="@null"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:background="@drawable/bg_orange_border_radius_30"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

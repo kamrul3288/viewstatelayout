@@ -2,17 +2,20 @@ package com.iamkamrul.library.extension
 
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.iamkamrul.library.R
 import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 
 fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
-    emptyImage:Int = R.drawable.ic_no_result,
+    emptyImage:Int,
+    title: String,
+    titleTextFontSize:Float,
     message:String,
+    messageTextFontSize: Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
+    buttonStartDrawable:Int?,
     refreshCallback:()->Unit
 ){
     // hide all error layout
@@ -25,6 +28,15 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     // set refresh button visibility
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.isVisible = refreshButtonVisibility
 
+    //title and message visibility
+    incSimpleDataEmptyLayout.dataEmptyTitleTv.isVisible = title.isNotEmpty()
+    incSimpleDataEmptyLayout.dataEmptyMessageTv.isVisible = title.isNotEmpty()
+
+    //title and message font size
+    incSimpleDataEmptyLayout.dataEmptyTitleTv.textSize = titleTextFontSize
+    incSimpleDataEmptyLayout.dataEmptyMessageTv.textSize = messageTextFontSize
+
+
     incSimpleDataEmptyLayout.dataEmptyIv.setImageResource(emptyImage)
     incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
@@ -33,15 +45,22 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
         refreshCallback.invoke()
     }
+    buttonStartDrawable?.let {
+        incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setCompoundDrawablesWithIntrinsicBounds(it,0,0,0)
+    }
 }
 
 fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     lottieRes:Int,
+    title: String,
+    titleTextFontSize:Float,
     message:String,
+    messageTextFontSize: Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
     buttonDrawable:Int,
     buttonTextColor:Int,
+    buttonStartDrawable:Int?,
     refreshCallback:()->Unit
 ){
 
@@ -55,6 +74,14 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     // set refresh button visibility
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.isVisible = refreshButtonVisibility
 
+    //title and message visibility
+    incLottieDataEmptyLayout.dataEmptyTitleTv.isVisible = title.isNotEmpty()
+    incLottieDataEmptyLayout.dataEmptyMessageTv.isVisible = title.isNotEmpty()
+
+    //title and message font size
+    incLottieDataEmptyLayout.dataEmptyTitleTv.textSize = titleTextFontSize
+    incLottieDataEmptyLayout.dataEmptyMessageTv.textSize = messageTextFontSize
+
     incLottieDataEmptyLayout.dataEmptyIv.setAnimation(lottieRes)
     incLottieDataEmptyLayout.dataEmptyIv.playAnimation()
     incLottieDataEmptyLayout.dataEmptyMessageTv.text = message
@@ -66,6 +93,9 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
             hideDataEmptyLayout()
         }
         refreshCallback.invoke()
+    }
+    buttonStartDrawable?.let {
+        incLottieDataEmptyLayout.dataEmptyRefreshBtn.setCompoundDrawablesWithIntrinsicBounds(it,0,0,0)
     }
 }
 

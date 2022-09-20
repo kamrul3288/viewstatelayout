@@ -1,7 +1,5 @@
 package com.iamkamrul.library
 
-import android.graphics.Typeface
-
 object ViewStateLayoutConfig {
     var networkErrorTitleTextSize:Float = 22.0f
     var networkErrorMessageTextSize:Float = 16.0f
@@ -13,8 +11,8 @@ object ViewStateLayoutConfig {
     var networkErrorLottieImage = R.raw.animation_no_internet
 
 
-    var dataEmptyTitleTextSize:Int = 18
-    var dataEmptyMessageTextSize:Int = 14
+    var dataEmptyTitleTextSize:Float = 22.0f
+    var dataEmptyMessageTextSize:Float = 16.0f
 
     var dataEmptyRetryButtonBg = R.drawable.bg_orange_border_radius_30
     var dataEmptyButtonTextColor = R.color.white
@@ -26,5 +24,8 @@ object ViewStateLayoutConfig {
     var progressBarLottie = R.raw.animation_loading
 
     var refreshButtonViewSateManageFlag = true
+
+    var dataEmptyRefreshButtonText = "Refresh"
+    var networkErrorButtonText = "Refresh"
 
 }

@@ -5,7 +5,7 @@
     android:id="@+id/simpleDataEmptyLayout"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="visible"
+    android:visibility="gone"
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -51,12 +51,13 @@
         <Button
             android:id="@+id/dataEmptyRefreshBtn"
             android:layout_marginTop="24dp"
+            android:paddingHorizontal="60dp"
             android:text="@string/button_refresh"
             app:backgroundTint="@null"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:background="@drawable/bg_orange_border_radius_30"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

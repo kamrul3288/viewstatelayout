@@ -2,8 +2,6 @@ package com.iamkamrul.viewstatelayout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.iamkamrul.library.constant.ViewStateConfig
 import com.iamkamrul.viewstatelayout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

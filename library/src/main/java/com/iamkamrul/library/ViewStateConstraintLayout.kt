@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +63,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         message:String = "",
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = context.getString(R.string.button_refresh),
+        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
         @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
@@ -90,7 +91,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         message:String = "",
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = context.getString(R.string.button_refresh),
+        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
         @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkRetryButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
@@ -128,42 +129,58 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @refreshCallback send to refresh callback
     **/
     fun showSimpleDataEmptyLayout(
-        emptyImage:Int = R.drawable.ic_no_result,
-        message:String = context.getString(R.string.message_no_data_found),
+        @DrawableRes emptyImage:Int = ViewStateLayoutConfig.dataEmptyImage,
+        title: String = "",
+        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
+        message:String = "",
+        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = context.getString(R.string.button_refresh),
-        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-        buttonTextColor:Int = R.color.white,
+        buttonText:String = ViewStateLayoutConfig.dataEmptyRefreshButtonText,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyRetryButtonBg,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
         binding.showSimpleDataEmptyView(
             emptyImage = emptyImage,
+            title = title,
+            titleTextFontSize = titleTextFontSize,
             message = message,
+            messageTextFontSize = messageTextFontSize,
             refreshButtonVisibility = refreshButtonVisibility,
             buttonText = buttonText,
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
+            buttonStartDrawable = buttonStartDrawable,
             refreshCallback = refreshCallback,
         )
     }
 
 
     fun showLottieDataEmptyLayout(
-        lottieRes:Int = R.raw.animation_no_data,
-        message:String = context.getString(R.string.message_no_data_found),
+        lottieRes:Int = ViewStateLayoutConfig.dataEmptyLottieImage,
+        title: String = "",
+        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
+        message:String = "",
+        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = context.getString(R.string.button_refresh),
-        buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-        buttonTextColor:Int = R.color.white,
+        buttonText:String = ViewStateLayoutConfig.dataEmptyRefreshButtonText,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyRetryButtonBg,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
         binding.showLottieDataEmptyView(
             lottieRes = lottieRes,
+            title = title,
+            titleTextFontSize = titleTextFontSize,
             message = message,
+            messageTextFontSize = messageTextFontSize,
             refreshButtonVisibility = refreshButtonVisibility,
             buttonText = buttonText,
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
+            buttonStartDrawable = buttonStartDrawable,
             refreshCallback = refreshCallback,
         )
     }
