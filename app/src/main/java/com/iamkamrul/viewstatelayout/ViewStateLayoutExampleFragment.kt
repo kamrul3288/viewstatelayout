@@ -35,14 +35,18 @@ class ViewStateLayoutExampleFragment : Fragment() {
         binding.networkError.setOnClickListener {
             binding.viewState.showSimpleNetworkErrorLayout(
                 title = "Something went wrong",
-                message = "Check your network connection"
+                message = "Check your network connection",
+                buttonStartDrawable = R.drawable.ic_refresh_24
             ) {
                 Toast.makeText(requireContext(), "refresh Call", Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.dataEmptyBtn.setOnClickListener {
-            binding.viewState.showSimpleDataEmptyLayout {
+            binding.viewState.showSimpleDataEmptyLayout(
+                title = "Lorem Ipsum",
+                message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            ) {
                 Toast.makeText(requireContext(), "data refresh Call", Toast.LENGTH_SHORT).show()
             }
 
@@ -53,13 +57,19 @@ class ViewStateLayoutExampleFragment : Fragment() {
         }
 
         binding.lottieNetworkError.setOnClickListener {
-            binding.viewState.showLottieNetworkErrorLayout {
+            binding.viewState.showLottieNetworkErrorLayout(
+                title = "Something went wrong",
+                message = "Check your network connection"
+            ) {
                 Toast.makeText(requireContext(), "refresh Call", Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.lottieDataEmptyBtn.setOnClickListener {
-            binding.viewState.showLottieDataEmptyLayout {
+            binding.viewState.showLottieDataEmptyLayout(
+                title = "Lorem Ipsum",
+                message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            ) {
                 Toast.makeText(requireContext(), "data refresh Call", Toast.LENGTH_SHORT).show()
             }
 
