@@ -1,27 +1,34 @@
 package com.iamkamrul.library
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.RawRes
 
 object ViewStateLayoutConfig {
+    var networkErrorTitleText:String = ""
     var networkErrorTitleTextSize:Float = 22.0f
+
+    var networkErrorMessageText:String = ""
     var networkErrorMessageTextSize:Float = 16.0f
 
-    var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
-    var networkButtonTextColor = R.color.white
+    @DrawableRes var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
+    @DrawableRes var networkErrorButtonStartDrawable:Int? = null
+    @ColorRes var networkButtonTextColor = R.color.white
 
-    var networkErrorImage = R.drawable.ic_no_internet
-    var networkErrorLottieImage = R.raw.animation_no_internet
+    @DrawableRes var networkErrorImage = R.drawable.ic_no_internet
+    @RawRes var networkErrorLottieImage = R.raw.animation_no_internet
 
 
     var dataEmptyTitleTextSize:Float = 22.0f
     var dataEmptyMessageTextSize:Float = 16.0f
 
-    var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
-    var dataEmptyButtonTextColor = R.color.white
+    @DrawableRes var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
+    @ColorRes var dataEmptyButtonTextColor = R.color.white
 
-    var dataEmptyImage = R.drawable.ic_no_result
-    var dataEmptyLottieImage = R.raw.animation_no_data
+    @DrawableRes var dataEmptyImage = R.drawable.ic_no_result
+    @RawRes var dataEmptyLottieImage = R.raw.animation_no_data
 
-    var progressBarColor = R.color.orange
-    var progressBarLottie = R.raw.animation_loading
+    @ColorRes var progressBarColor = R.color.orange
+    @RawRes var progressBarLottie = R.raw.animation_loading
 
     var refreshButtonViewSateManageFlag = true
 

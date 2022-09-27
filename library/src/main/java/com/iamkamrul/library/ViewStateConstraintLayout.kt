@@ -3,7 +3,6 @@ package com.iamkamrul.library
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
@@ -58,15 +57,15 @@ class ViewStateConstraintLayout : ConstraintLayout{
     **/
     fun showSimpleNetworkErrorLayout(
         @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImage,
-        title:String = "",
+        title:String = ViewStateLayoutConfig.networkErrorTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = "",
+        message:String = ViewStateLayoutConfig.networkErrorMessageText,
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
-        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = null,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
         refreshCallback:()->Unit
     ){
        binding.showSimpleNetworkError(
@@ -86,15 +85,15 @@ class ViewStateConstraintLayout : ConstraintLayout{
 
     fun showLottieNetworkErrorLayout(
         @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImage,
-        title:String = "",
+        title:String = ViewStateLayoutConfig.networkErrorTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = "",
+        message:String = ViewStateLayoutConfig.networkErrorMessageText,
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
-        @ColorInt buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = null,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
         refreshCallback:()->Unit
     ){
         binding.showLottieNetworkError(

@@ -21,5 +21,6 @@ class MainActivity : AppCompatActivity() {
         ViewStateLayoutConfig.networkButtonTextColor = R.color.black
         ViewStateLayoutConfig.dataEmptyButtonBg = R.drawable.button_bg
         ViewStateLayoutConfig.dataEmptyButtonTextColor = R.color.black
+        ViewStateLayoutConfig.networkErrorButtonStartDrawable = R.drawable.ic_refresh_24
     }
 }

@@ -35,8 +35,7 @@ class ViewStateLayoutExampleFragment : Fragment() {
         binding.networkError.setOnClickListener {
             binding.viewState.showSimpleNetworkErrorLayout(
                 title = "Something went wrong",
-                message = "Check your network connection",
-                buttonStartDrawable = R.drawable.ic_refresh_24
+                message = "Check your network connection"
             ) {
                 Toast.makeText(requireContext(), "refresh Call", Toast.LENGTH_SHORT).show()
             }
