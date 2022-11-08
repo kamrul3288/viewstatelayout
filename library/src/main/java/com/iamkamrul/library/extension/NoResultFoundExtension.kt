@@ -4,6 +4,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.library.utils.clickWithDebounce
 
 fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     emptyImage:Int,
@@ -43,7 +44,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
-    incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
+    incSimpleDataEmptyLayout.dataEmptyRefreshBtn.clickWithDebounce {
         refreshCallback.invoke()
     }
     buttonStartDrawable?.let {
@@ -90,7 +91,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
-    incLottieDataEmptyLayout.dataEmptyRefreshBtn.setOnClickListener {
+    incLottieDataEmptyLayout.dataEmptyRefreshBtn.clickWithDebounce {
         if (ViewStateLayoutConfig.refreshButtonViewSateManageFlag){
             hideDataEmptyLayout()
         }

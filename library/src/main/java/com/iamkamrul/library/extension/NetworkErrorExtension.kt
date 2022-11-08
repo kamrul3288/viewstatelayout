@@ -4,6 +4,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.library.utils.clickWithDebounce
 
 //--------show simple network error layout------------
 fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
@@ -44,7 +45,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
     incSimpleErrorLayout.networkErrorRefreshBtn.setBackgroundResource(buttonDrawable)
     incSimpleErrorLayout.networkErrorRefreshBtn.text = buttonText
     incSimpleErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
-    incSimpleErrorLayout.networkErrorRefreshBtn.setOnClickListener {
+    incSimpleErrorLayout.networkErrorRefreshBtn.clickWithDebounce {
         refreshCallback.invoke()
     }
     buttonStartDrawable?.let {
@@ -91,7 +92,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     incLottieErrorLayout.networkErrorRefreshBtn.setBackgroundResource(buttonDrawable)
     incLottieErrorLayout.networkErrorRefreshBtn.text = buttonText
     incLottieErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
-    incLottieErrorLayout.networkErrorRefreshBtn.setOnClickListener {
+    incLottieErrorLayout.networkErrorRefreshBtn.clickWithDebounce {
         if (ViewStateLayoutConfig.refreshButtonViewSateManageFlag){
             hideNetworkErrorLayout()
         }
