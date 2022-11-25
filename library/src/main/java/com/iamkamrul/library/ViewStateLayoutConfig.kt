@@ -50,8 +50,6 @@ object ViewStateLayoutConfig {
     @ColorRes var progressBarColor = R.color.orange
     @RawRes var progressBarLottie = R.raw.animation_loading
 
-    var refreshButtonViewSateManageFlag = true
-
     var dataEmptyButtonText = "Refresh"
     var dataEmptyButtonTextSize:Float = 16.0f
 

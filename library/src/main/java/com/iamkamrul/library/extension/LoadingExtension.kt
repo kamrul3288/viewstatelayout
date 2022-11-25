@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 
 // show simple progress bar
-fun ViewStateConstraintLayoutBinding.simpleProgressBarStatus(
+internal fun ViewStateConstraintLayoutBinding.progressbarView(
     progressStatus:Boolean,
     progressBarColor:Int
 ){
@@ -21,7 +21,7 @@ fun ViewStateConstraintLayoutBinding.simpleProgressBarStatus(
 
 
 // show lottie progress bar
-fun ViewStateConstraintLayoutBinding.lottieProgressBarStatus(
+internal fun ViewStateConstraintLayoutBinding.progressBarLottieView(
     progressStatus:Boolean,
     @RawRes lottieRes:Int
 ){
@@ -39,12 +39,12 @@ fun ViewStateConstraintLayoutBinding.lottieProgressBarStatus(
 }
 
 private fun ViewStateConstraintLayoutBinding.progressBarConfig(){
-    hideDataEmptyLayout()
-    hideNetworkErrorLayout()
+    goneDataEmptyView()
+    goneNetworkErrorView()
 }
 
 // hide progress bar when network error & data empty error showing
-fun ViewStateConstraintLayoutBinding.hideProgressLayout(){
+internal fun ViewStateConstraintLayoutBinding.hideProgressLayout(){
     incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
     incLottieProgressLayout.lottieProgressBar.cancelAnimation()
     incSimpleProgress.simpleProgressParent.isVisible = false

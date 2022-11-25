@@ -2,11 +2,10 @@ package com.iamkamrul.library.extension
 
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 import com.iamkamrul.library.utils.clickWithDebounce
 
-fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
+fun ViewStateConstraintLayoutBinding.dataEmptyView(
     emptyImage:Int,
     title: String,
     titleTextFontSize:Float,
@@ -54,7 +53,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     }
 }
 
-fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
+fun ViewStateConstraintLayoutBinding.dataEmptyLottieView(
     lottieRes:Int,
     title: String,
     titleTextFontSize:Float,
@@ -96,9 +95,6 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.clickWithDebounce {
-        if (ViewStateLayoutConfig.refreshButtonViewSateManageFlag){
-            hideDataEmptyLayout()
-        }
         refreshCallback.invoke()
     }
     buttonStartDrawable?.let {
@@ -108,11 +104,11 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
 
 private fun ViewStateConstraintLayoutBinding.dataEmptyConfig(){
     hideProgressLayout()
-    hideNetworkErrorLayout()
+    goneNetworkErrorView()
 }
 
 
-fun ViewStateConstraintLayoutBinding.hideDataEmptyLayout(){
+fun ViewStateConstraintLayoutBinding.goneDataEmptyView(){
     incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = false
     incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = false
     incLottieDataEmptyLayout.dataEmptyIv.cancelAnimation()

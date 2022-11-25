@@ -2,12 +2,11 @@ package com.iamkamrul.library.extension
 
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.iamkamrul.library.ViewStateLayoutConfig
 import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
 import com.iamkamrul.library.utils.clickWithDebounce
 
 //--------show simple network error layout------------
-fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
+fun ViewStateConstraintLayoutBinding.networkErrorView(
     errorImage:Int,
     title:String,
     titleTextFontSize:Float,
@@ -56,7 +55,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
 }
 
 //--------show simple lottie error layout------------
-fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
+fun ViewStateConstraintLayoutBinding.networkErrorLottieView(
     lottieRes:Int,
     title:String,
     titleTextFontSize:Float,
@@ -97,9 +96,6 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     incLottieErrorLayout.networkErrorRefreshBtn.text = buttonText
     incLottieErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incLottieErrorLayout.networkErrorRefreshBtn.clickWithDebounce {
-        if (ViewStateLayoutConfig.refreshButtonViewSateManageFlag){
-            hideNetworkErrorLayout()
-        }
         refreshCallback.invoke()
     }
     buttonStartDrawable?.let {
@@ -109,11 +105,11 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
 
 private fun ViewStateConstraintLayoutBinding.networkErrorConfig(){
     hideProgressLayout()
-    hideDataEmptyLayout()
+    goneDataEmptyView()
 }
 
 
-fun ViewStateConstraintLayoutBinding.hideNetworkErrorLayout(){
+fun ViewStateConstraintLayoutBinding.goneNetworkErrorView(){
     incSimpleErrorLayout.simpleErrorLayout.isVisible = false
     incLottieErrorLayout.lottieErrorLayout.isVisible = false
     incLottieErrorLayout.networkErrorIv.cancelAnimation()
