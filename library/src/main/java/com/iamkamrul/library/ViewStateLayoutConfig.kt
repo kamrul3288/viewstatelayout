@@ -29,7 +29,10 @@ object ViewStateLayoutConfig {
     @RawRes var networkErrorLottieImageRawRes = networkErrorLottieImage
 
 
+    var dataEmptyTitleText:String = ""
     var dataEmptyTitleTextSize:Float = 22.0f
+
+    var dataEmptyMessageText:String = ""
     var dataEmptyMessageTextSize:Float = 16.0f
 
     @DrawableRes var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
