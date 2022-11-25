@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         //set global configuration
         ViewStateLayoutConfig.progressBarColor = R.color.purple_700
-        ViewStateLayoutConfig.networkErrorButtonBg = R.drawable.button_bg
+        ViewStateLayoutConfig.networkErrorButtonDrawableRes = R.drawable.button_bg
         ViewStateLayoutConfig.networkButtonTextColor = R.color.black
         ViewStateLayoutConfig.dataEmptyButtonBg = R.drawable.button_bg
         ViewStateLayoutConfig.dataEmptyButtonTextColor = R.color.black
-        ViewStateLayoutConfig.networkErrorButtonStartDrawable = R.drawable.ic_refresh_24
+        ViewStateLayoutConfig.networkErrorButtonStartDrawableRes = R.color.black
     }
 }

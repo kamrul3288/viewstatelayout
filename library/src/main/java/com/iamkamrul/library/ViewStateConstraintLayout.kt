@@ -65,7 +65,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
+        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
         refreshCallback:()->Unit
     ){
        binding.showSimpleNetworkError(
@@ -93,7 +93,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
+        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
         refreshCallback:()->Unit
     ){
         binding.showLottieNetworkError(

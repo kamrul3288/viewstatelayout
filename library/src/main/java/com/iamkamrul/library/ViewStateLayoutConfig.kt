@@ -14,7 +14,9 @@ object ViewStateLayoutConfig {
     @DrawableRes var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
     @DrawableRes var networkErrorButtonDrawableRes = networkErrorButtonBg
 
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonStartDrawableRes"))
     @DrawableRes var networkErrorButtonStartDrawable:Int? = null
+    @DrawableRes var networkErrorButtonStartDrawableRes:Int? = networkErrorButtonStartDrawable
     @ColorRes var networkButtonTextColor = R.color.white
 
     @DrawableRes var networkErrorImage = R.drawable.ic_no_internet
