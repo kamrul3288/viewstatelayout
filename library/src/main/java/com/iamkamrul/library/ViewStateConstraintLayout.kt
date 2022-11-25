@@ -135,7 +135,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBg,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
@@ -164,7 +164,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBg,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit

@@ -35,7 +35,9 @@ object ViewStateLayoutConfig {
     var dataEmptyMessageText:String = ""
     var dataEmptyMessageTextSize:Float = 16.0f
 
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyButtonBgDrawableRes"))
     @DrawableRes var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
+    @DrawableRes var dataEmptyButtonBgDrawableRes = dataEmptyButtonBg
     @ColorRes var dataEmptyButtonTextColor = R.color.white
 
     @DrawableRes var dataEmptyImage = R.drawable.ic_no_result
