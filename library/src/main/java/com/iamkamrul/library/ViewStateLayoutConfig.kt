@@ -17,10 +17,16 @@ object ViewStateLayoutConfig {
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonStartDrawableRes"))
     @DrawableRes var networkErrorButtonStartDrawable:Int? = null
     @DrawableRes var networkErrorButtonStartDrawableRes:Int? = networkErrorButtonStartDrawable
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonTextColor"))
     @ColorRes var networkButtonTextColor = R.color.white
+    @ColorRes var networkErrorButtonTextColor = networkButtonTextColor
 
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorImageDrawableRes"))
     @DrawableRes var networkErrorImage = R.drawable.ic_no_internet
+    @DrawableRes var networkErrorImageDrawableRes = networkErrorImage
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorLottieImageRawRes"))
     @RawRes var networkErrorLottieImage = R.raw.animation_no_internet
+    @RawRes var networkErrorLottieImageRawRes = networkErrorLottieImage
 
 
     var dataEmptyTitleTextSize:Float = 22.0f

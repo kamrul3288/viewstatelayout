@@ -56,7 +56,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @refreshCallback send to refresh callback
     **/
     fun showSimpleNetworkErrorLayout(
-        @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImage,
+        @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImageDrawableRes,
         title:String = ViewStateLayoutConfig.networkErrorTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
         message:String = ViewStateLayoutConfig.networkErrorMessageText,
@@ -64,7 +64,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
         refreshCallback:()->Unit
     ){
@@ -84,7 +84,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     }
 
     fun showLottieNetworkErrorLayout(
-        @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImage,
+        @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImageRawRes,
         title:String = ViewStateLayoutConfig.networkErrorTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
         message:String = ViewStateLayoutConfig.networkErrorMessageText,
@@ -92,7 +92,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
         @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
+        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
         refreshCallback:()->Unit
     ){
