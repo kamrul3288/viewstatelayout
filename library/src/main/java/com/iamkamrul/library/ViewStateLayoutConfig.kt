@@ -53,6 +53,9 @@ object ViewStateLayoutConfig {
     var refreshButtonViewSateManageFlag = true
 
     var dataEmptyButtonText = "Refresh"
+    var dataEmptyButtonTextSize:Float = 16.0f
+
     var networkErrorButtonText = "Refresh"
+    var networkErrorButtonTextSize:Float = 16.0f
 
 }

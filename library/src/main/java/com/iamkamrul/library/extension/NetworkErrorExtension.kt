@@ -15,6 +15,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
     messageTextFontSize:Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
+    buttonTextSize:Float,
     buttonDrawable:Int,
     buttonStartDrawable:Int?,
     buttonTextColor:Int,
@@ -43,6 +44,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleNetworkError(
     incSimpleErrorLayout.networkErrorDesTv.text = message
 
     incSimpleErrorLayout.networkErrorRefreshBtn.setBackgroundResource(buttonDrawable)
+    incSimpleErrorLayout.networkErrorRefreshBtn.textSize = buttonTextSize
     incSimpleErrorLayout.networkErrorRefreshBtn.text = buttonText
     incSimpleErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incSimpleErrorLayout.networkErrorRefreshBtn.clickWithDebounce {
@@ -62,6 +64,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     messageTextFontSize:Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
+    buttonTextSize:Float,
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
@@ -90,6 +93,7 @@ fun ViewStateConstraintLayoutBinding.showLottieNetworkError(
     incLottieErrorLayout.networkErrorTitleTv.text = title
     incLottieErrorLayout.networkErrorDesTv.text = message
     incLottieErrorLayout.networkErrorRefreshBtn.setBackgroundResource(buttonDrawable)
+    incLottieErrorLayout.networkErrorRefreshBtn.textSize = buttonTextSize
     incLottieErrorLayout.networkErrorRefreshBtn.text = buttonText
     incLottieErrorLayout.networkErrorRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incLottieErrorLayout.networkErrorRefreshBtn.clickWithDebounce {
