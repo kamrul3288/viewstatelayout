@@ -40,8 +40,12 @@ object ViewStateLayoutConfig {
     @DrawableRes var dataEmptyButtonBgDrawableRes = dataEmptyButtonBg
     @ColorRes var dataEmptyButtonTextColor = R.color.white
 
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyImageDrawableRes"))
     @DrawableRes var dataEmptyImage = R.drawable.ic_no_result
+    @DrawableRes var dataEmptyImageDrawableRes = dataEmptyImage
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyLottieImageRawRes"))
     @RawRes var dataEmptyLottieImage = R.raw.animation_no_data
+    @RawRes var dataEmptyLottieImageRawRes = dataEmptyLottieImage
 
     @ColorRes var progressBarColor = R.color.orange
     @RawRes var progressBarLottie = R.raw.animation_loading

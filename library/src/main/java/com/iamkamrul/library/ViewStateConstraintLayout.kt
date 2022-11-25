@@ -128,7 +128,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
     * @refreshCallback send to refresh callback
     **/
     fun showSimpleDataEmptyLayout(
-        @DrawableRes emptyImage:Int = ViewStateLayoutConfig.dataEmptyImage,
+        @DrawableRes emptyImage:Int = ViewStateLayoutConfig.dataEmptyImageDrawableRes,
         title: String = ViewStateLayoutConfig.dataEmptyTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
         message:String = ViewStateLayoutConfig.dataEmptyMessageText,
@@ -157,7 +157,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
 
 
     fun showLottieDataEmptyLayout(
-        lottieRes:Int = ViewStateLayoutConfig.dataEmptyLottieImage,
+        lottieRes:Int = ViewStateLayoutConfig.dataEmptyLottieImageRawRes,
         title: String = ViewStateLayoutConfig.dataEmptyTitleText,
         titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
         message:String = ViewStateLayoutConfig.dataEmptyMessageText,
