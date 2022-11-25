@@ -10,7 +10,10 @@ object ViewStateLayoutConfig {
     var networkErrorMessageText:String = ""
     var networkErrorMessageTextSize:Float = 16.0f
 
+    @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonDrawableRes"))
     @DrawableRes var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
+    @DrawableRes var networkErrorButtonDrawableRes = networkErrorButtonBg
+
     @DrawableRes var networkErrorButtonStartDrawable:Int? = null
     @ColorRes var networkButtonTextColor = R.color.white
 

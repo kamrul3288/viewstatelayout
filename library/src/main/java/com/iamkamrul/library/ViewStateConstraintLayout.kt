@@ -63,7 +63,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
         refreshCallback:()->Unit
@@ -91,7 +91,7 @@ class ViewStateConstraintLayout : ConstraintLayout{
         messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
         buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonBg,
+        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
         @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawable,
         refreshCallback:()->Unit
