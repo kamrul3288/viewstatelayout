@@ -14,6 +14,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     messageTextFontSize: Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
+    buttonTextSize:Float,
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
@@ -42,6 +43,7 @@ fun ViewStateConstraintLayoutBinding.showSimpleDataEmptyView(
     incSimpleDataEmptyLayout.dataEmptyTitleTv.text = title
     incSimpleDataEmptyLayout.dataEmptyMessageTv.text = message
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
+    incSimpleDataEmptyLayout.dataEmptyRefreshBtn.textSize = buttonTextSize
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incSimpleDataEmptyLayout.dataEmptyRefreshBtn.clickWithDebounce {
@@ -60,6 +62,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     messageTextFontSize: Float,
     refreshButtonVisibility:Boolean,
     buttonText:String,
+    buttonTextSize:Float,
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
@@ -89,6 +92,7 @@ fun ViewStateConstraintLayoutBinding.showLottieDataEmptyView(
     incLottieDataEmptyLayout.dataEmptyTitleTv.text = title
     incLottieDataEmptyLayout.dataEmptyMessageTv.text = message
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setBackgroundResource(buttonDrawable)
+    incLottieDataEmptyLayout.dataEmptyRefreshBtn.textSize = buttonTextSize
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.text = buttonText
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.setTextColor(ContextCompat.getColor(this.root.context,buttonTextColor))
     incLottieDataEmptyLayout.dataEmptyRefreshBtn.clickWithDebounce {
