@@ -1,3 +1,3 @@
 object ModulesDependencies {
-    const val library = ":library"
+    const val viewstate = ":viewstate"
 }

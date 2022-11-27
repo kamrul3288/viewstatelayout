@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<com.iamkamrul.library.ViewStateConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,17 +7,106 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <HorizontalScrollView
+        android:id="@+id/hv"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ScrollViewCount">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/progressBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress" />
+
+            <Button
+                android:id="@+id/networkError"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Network Error" />
+
+            <Button
+                android:id="@+id/dataEmptyBtn"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Result" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <HorizontalScrollView
+        android:id="@+id/lottiehv"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hv"
+        tools:ignore="ScrollViewCount">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/lottieProgressBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress" />
+
+            <Button
+                android:id="@+id/lottieNetworkError"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Network Error" />
+
+            <Button
+                android:id="@+id/lottieDataEmptyBtn"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Result" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.iamkamrul.library.ViewStateConstraintLayout
+        android:id="@+id/viewState"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSheetBtn"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottiehv" />
+
+    <Button
+        android:id="@+id/bottomSheetBtn"
+        android:text="Bottom Sheet Fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.iamkamrul.library.ViewStateConstraintLayout>
