@@ -2,7 +2,7 @@ package com.iamkamrul.library
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
-
+typealias VSLConfig = ViewStateLayoutConfig
 object ViewStateLayoutConfig {
     var networkErrorTitleText:String = ""
     var networkErrorTitleTextSize:Float = 22.0f

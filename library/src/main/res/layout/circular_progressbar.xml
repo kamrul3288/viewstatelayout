@@ -4,7 +4,7 @@
     android:visibility="gone"
     android:clickable="true"
     android:focusable="true"
-    android:background="@color/white"
+    android:elevation="10dp"
     android:focusableInTouchMode="true"
     android:id="@+id/simpleProgressParent"
     android:layout_width="match_parent"

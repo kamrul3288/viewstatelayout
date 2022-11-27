@@ -1,66 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/simpleDataEmptyLayout"
-    android:clickable="true"
-    android:focusable="true"
-    android:visibility="gone"
-    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:elevation="10dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="gone">
 
 
-    <LinearLayout
-        android:gravity="center"
-        android:padding="16dp"
-        android:orientation="vertical"
+    <ImageView
+        android:id="@+id/dataEmptyIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_dc"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_no_result" />
+
+    <TextView
+        android:id="@+id/dataEmptyTitleTv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/title_no_internet"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dataEmptyMessageTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/title_no_internet"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/dataEmptyRefreshBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_orange_border_radius_30"
+        android:paddingHorizontal="60dp"
+        android:text="@string/button_refresh"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@null" />
 
 
-        <ImageView
-            android:id="@+id/dataEmptyIv"
-            app:srcCompat="@drawable/ic_no_result"
-            android:contentDescription="@string/content_dc"
-            android:scaleType="centerCrop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/dataEmptyTitleTv"
-            android:textColor="@color/black"
-            android:layout_marginTop="24dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/title_no_internet"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/dataEmptyMessageTv"
-            android:textColor="@color/black"
-            android:layout_marginTop="24dp"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:text="@string/title_no_internet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/dataEmptyRefreshBtn"
-            android:layout_marginTop="24dp"
-            android:paddingHorizontal="60dp"
-            android:text="@string/button_refresh"
-            app:backgroundTint="@null"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_orange_border_radius_30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

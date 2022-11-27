@@ -1,63 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lottieErrorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="gone"
     android:focusableInTouchMode="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:gravity="center"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="gone">
 
 
-    <LinearLayout
-        android:gravity="center"
-        android:padding="16dp"
-        android:orientation="vertical"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/networkErrorIv"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/networkErrorTitleTv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/title_no_internet"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/networkErrorDesTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        tools:text="@string/message_no_internet" />
+
+    <Button
+        android:id="@+id/networkErrorRefreshBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_orange_border_radius_30"
+        android:paddingHorizontal="60dp"
+        android:text="@string/button_refresh"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@null" />
 
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/networkErrorIv"
-            app:lottie_loop="true"
-            android:layout_width="300dp"
-            android:layout_height="200dp"/>
-
-        <TextView
-            android:id="@+id/networkErrorTitleTv"
-            android:textColor="@color/black"
-            android:layout_marginTop="24dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/title_no_internet"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/networkErrorDesTv"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:textSize="16sp"
-            tools:text="@string/message_no_internet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/networkErrorRefreshBtn"
-            android:layout_marginTop="24dp"
-            android:text="@string/button_refresh"
-            android:paddingHorizontal="60dp"
-            app:backgroundTint="@null"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_orange_border_radius_30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>
