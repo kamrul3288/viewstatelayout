@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/vslLoadingView"
+        app:showAsAction="never"
+        android:title="Loading"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/vslNetworkErrorView"
+        app:showAsAction="never"
+        android:title="Network Error"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/vslDataEmptyErrorView"
+        app:showAsAction="never"
+        android:title="Data Empty Error"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/vslLoadingViewLottie"
+        app:showAsAction="never"
+        android:title="Lottie Loading"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/vslNetworkErrorViewLottie"
+        app:showAsAction="never"
+        android:title="Lottie Network Error"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/vslDataEmptyErrorViewLottie"
+        app:showAsAction="never"
+        android:title="Lottie Data Empty Error"
+        tools:ignore="HardcodedText" />
+
+
+
+</menu>
