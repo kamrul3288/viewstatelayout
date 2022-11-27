@@ -1,4 +1,4 @@
-package com.iamkamrul.library
+package com.iamkamrul.vsl
 
 import org.junit.Test
 

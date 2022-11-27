@@ -1,4 +1,4 @@
-package com.iamkamrul.library
+package com.iamkamrul.vsl
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

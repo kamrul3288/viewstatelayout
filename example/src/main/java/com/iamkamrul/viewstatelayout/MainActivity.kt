@@ -3,7 +3,7 @@ package com.iamkamrul.viewstatelayout
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.iamkamrul.library.ViewStateLayoutConfig
+import com.iamkamrul.vsl.ViewStateLayoutConfig
 import com.iamkamrul.viewstatelayout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
 
         //set global configuration
         ViewStateLayoutConfig.progressBarColor = R.color.purple_700
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         binding.progressBtn.elevation = 0f
 
         binding.progressBtn.setOnClickListener {
-            binding.viewState.setSimpleProgressBarStatusLayout(true)
+            binding.root.setSimpleProgressBarStatusLayout(true)
         }
 
         binding.networkError.setOnClickListener {
-            binding.viewState.showSimpleNetworkErrorLayout(
+            binding.root.showSimpleNetworkErrorLayout(
                 title = "Something went wrong",
                 message = "Check your network connection"
             ) {
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.dataEmptyBtn.setOnClickListener {
-            binding.viewState.showSimpleDataEmptyLayout(
+            binding.root.showSimpleDataEmptyLayout(
                 title = "Lorem Ipsum",
                 message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ) {
@@ -51,11 +50,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.lottieProgressBtn.setOnClickListener {
-            binding.viewState.setLottieProgressBarStatusLayout(true)
+            binding.root.setLottieProgressBarStatusLayout(true)
         }
 
         binding.lottieNetworkError.setOnClickListener {
-            binding.viewState.showLottieNetworkErrorLayout(
+            binding.root.showLottieNetworkErrorLayout(
                 title = "Something went wrong",
                 message = "Check your network connection"
             ) {
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.lottieDataEmptyBtn.setOnClickListener {
-            binding.viewState.showLottieDataEmptyLayout(
+            binding.root .showLottieDataEmptyLayout(
                 title = "Lorem Ipsum",
                 message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ) {

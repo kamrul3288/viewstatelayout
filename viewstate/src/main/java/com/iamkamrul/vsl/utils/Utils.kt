@@ -1,4 +1,4 @@
-package com.iamkamrul.library.utils
+package com.iamkamrul.vsl.utils
 
 import android.os.SystemClock
 import android.view.View

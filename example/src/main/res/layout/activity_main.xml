@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.iamkamrul.library.ViewStateConstraintLayout
+<com.iamkamrul.vsl.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -88,25 +88,4 @@
         </LinearLayout>
 
     </HorizontalScrollView>
-
-    <com.iamkamrul.library.ViewStateConstraintLayout
-        android:id="@+id/viewState"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomSheetBtn"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottiehv" />
-
-    <Button
-        android:id="@+id/bottomSheetBtn"
-        android:text="Bottom Sheet Fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</com.iamkamrul.library.ViewStateConstraintLayout>
+</com.iamkamrul.vsl.ConstraintLayout>

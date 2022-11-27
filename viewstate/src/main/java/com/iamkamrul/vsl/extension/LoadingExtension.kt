@@ -1,10 +1,10 @@
-package com.iamkamrul.library.extension
+package com.iamkamrul.vsl.extension
 
 import android.content.res.ColorStateList
 import androidx.annotation.RawRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
 
 // show simple progress bar
 internal fun ViewStateConstraintLayoutBinding.progressbarView(

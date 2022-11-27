@@ -1,4 +1,4 @@
-package com.iamkamrul.library
+package com.iamkamrul.vsl
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,10 +7,10 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
-import com.iamkamrul.library.extension.*
+import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.vsl.extension.*
 
-class ViewStateConstraintLayout : ConstraintLayout{
+class ConstraintLayout : ConstraintLayout {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context,attrs)

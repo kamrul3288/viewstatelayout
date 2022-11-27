@@ -1,4 +1,4 @@
-package com.iamkamrul.library
+package com.iamkamrul.vsl
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes

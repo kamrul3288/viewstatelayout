@@ -1,9 +1,9 @@
-package com.iamkamrul.library.extension
+package com.iamkamrul.vsl.extension
 
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.iamkamrul.library.databinding.ViewStateConstraintLayoutBinding
-import com.iamkamrul.library.utils.clickWithDebounce
+import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.vsl.utils.clickWithDebounce
 
 fun ViewStateConstraintLayoutBinding.dataEmptyView(
     emptyImage:Int,
