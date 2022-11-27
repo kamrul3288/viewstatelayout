@@ -11,7 +11,7 @@ object ViewStateLayoutConfig {
     var networkErrorMessageTextSize:Float = 16.0f
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonDrawableRes"))
-    @DrawableRes var networkErrorButtonBg = R.drawable.bg_orange_border_radius_30
+    @DrawableRes var networkErrorButtonBg = R.drawable.viewstate_bg_orange_border_radius_30
     @DrawableRes var networkErrorButtonDrawableRes = networkErrorButtonBg
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorButtonStartDrawableRes"))
@@ -22,7 +22,7 @@ object ViewStateLayoutConfig {
     @ColorRes var networkErrorButtonTextColor = networkButtonTextColor
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorImageDrawableRes"))
-    @DrawableRes var networkErrorImage = R.drawable.ic_no_internet
+    @DrawableRes var networkErrorImage = R.drawable.ic_view_state_no_internet
     @DrawableRes var networkErrorImageDrawableRes = networkErrorImage
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorLottieImageRawRes"))
     @RawRes var networkErrorLottieImage = R.raw.animation_no_internet
@@ -36,12 +36,12 @@ object ViewStateLayoutConfig {
     var dataEmptyMessageTextSize:Float = 16.0f
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyButtonBgDrawableRes"))
-    @DrawableRes var dataEmptyButtonBg = R.drawable.bg_orange_border_radius_30
+    @DrawableRes var dataEmptyButtonBg = R.drawable.viewstate_bg_orange_border_radius_30
     @DrawableRes var dataEmptyButtonBgDrawableRes = dataEmptyButtonBg
     @ColorRes var dataEmptyButtonTextColor = R.color.white
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyImageDrawableRes"))
-    @DrawableRes var dataEmptyImage = R.drawable.ic_no_result
+    @DrawableRes var dataEmptyImage = R.drawable.ic_viewstae_no_result
     @DrawableRes var dataEmptyImageDrawableRes = dataEmptyImage
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyLottieImageRawRes"))
     @RawRes var dataEmptyLottieImage = R.raw.animation_no_data
