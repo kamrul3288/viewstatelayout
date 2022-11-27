@@ -2,7 +2,7 @@ package com.iamkamrul.vsl
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
-typealias VSLConfig = ViewStateLayoutConfig
+typealias VslConfig = ViewStateLayoutConfig
 object ViewStateLayoutConfig {
     var networkErrorTitleText:String = ""
     var networkErrorTitleTextSize:Float = 22.0f
@@ -55,5 +55,9 @@ object ViewStateLayoutConfig {
 
     var networkErrorButtonText = "Refresh"
     var networkErrorButtonTextSize:Float = 16.0f
+
+    @ColorRes var progressbarViewBackgroundResources:Int = R.color.white
+    @ColorRes var networkErrorViewBackgroundResources:Int = R.color.white
+    @ColorRes var dataEmptyViewBackgroundResources:Int = R.color.white
 
 }

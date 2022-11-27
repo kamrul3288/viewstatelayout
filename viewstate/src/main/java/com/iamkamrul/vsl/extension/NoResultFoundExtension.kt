@@ -17,10 +17,14 @@ fun ViewStateConstraintLayoutBinding.dataEmptyView(
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
+    backgroundColor:Int,
     refreshCallback:()->Unit
 ){
     // hide all error layout
     dataEmptyConfig()
+
+    //set background color
+    incSimpleDataEmptyLayout.root.setBackgroundResource(backgroundColor)
 
     // show no result simple layout
     incSimpleDataEmptyLayout.simpleDataEmptyLayout.isVisible = true
@@ -65,11 +69,15 @@ fun ViewStateConstraintLayoutBinding.dataEmptyLottieView(
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
+    backgroundColor:Int,
     refreshCallback:()->Unit
 ){
 
     // hide all error layout
     dataEmptyConfig()
+
+    //set background color
+    incLottieDataEmptyLayout.root.setBackgroundResource(backgroundColor)
 
     // show no result lottie layout
     incLottieDataEmptyLayout.lottieDataEmptyLayout.isVisible = true

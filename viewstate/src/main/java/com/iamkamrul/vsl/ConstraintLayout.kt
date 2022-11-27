@@ -27,21 +27,26 @@ class ConstraintLayout : ConstraintLayout {
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("progressbarView"))
     fun setSimpleProgressBarStatusLayout(
         progressStatus:Boolean,
-        progressBarColor:Int = ViewStateLayoutConfig.progressBarColor
+        progressBarColor:Int = VslConfig.progressBarColor,
+        @ColorRes backgroundColor:Int = VslConfig.progressbarViewBackgroundResources
+
     ){
        binding.progressbarView(
            progressStatus = progressStatus,
-           progressBarColor = progressBarColor
+           progressBarColor = progressBarColor,
+           backgroundColor = backgroundColor,
        )
     }
 
     fun progressbarView(
         progressStatus:Boolean,
-        progressBarColor:Int = ViewStateLayoutConfig.progressBarColor
+        progressBarColor:Int = VslConfig.progressBarColor,
+        @ColorRes backgroundColor:Int = VslConfig.progressbarViewBackgroundResources
     ){
         binding.progressbarView(
             progressStatus = progressStatus,
-            progressBarColor = progressBarColor
+            progressBarColor = progressBarColor,
+            backgroundColor = backgroundColor,
         )
     }
 
@@ -50,20 +55,24 @@ class ConstraintLayout : ConstraintLayout {
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("progressBarLottieView"))
     fun setLottieProgressBarStatusLayout(
         progressStatus:Boolean,
-        lottieRes:Int = ViewStateLayoutConfig.progressBarLottie
+        lottieRes:Int = VslConfig.progressBarLottie,
+        @ColorRes backgroundColor:Int = VslConfig.progressbarViewBackgroundResources
     ){
         binding.progressBarLottieView(
             progressStatus = progressStatus,
-            lottieRes = lottieRes
+            lottieRes = lottieRes,
+            backgroundColor = backgroundColor,
         )
     }
     fun progressBarLottieView(
         progressStatus:Boolean,
-        lottieRes:Int = ViewStateLayoutConfig.progressBarLottie
+        lottieRes:Int = VslConfig.progressBarLottie,
+        @ColorRes backgroundColor:Int = VslConfig.progressbarViewBackgroundResources
     ){
         binding.progressBarLottieView(
             progressStatus = progressStatus,
-            lottieRes = lottieRes
+            lottieRes = lottieRes,
+            backgroundColor = backgroundColor,
         )
     }
 
@@ -79,17 +88,18 @@ class ConstraintLayout : ConstraintLayout {
     **/
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorView"))
     fun showSimpleNetworkErrorLayout(
-        @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImageDrawableRes,
-        title:String = ViewStateLayoutConfig.networkErrorTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = ViewStateLayoutConfig.networkErrorMessageText,
-        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
+        @DrawableRes errorImage:Int = VslConfig.networkErrorImageDrawableRes,
+        title:String = VslConfig.networkErrorTitleText,
+        titleTextFontSize:Float = VslConfig.networkErrorTitleTextSize,
+        message:String = VslConfig.networkErrorMessageText,
+        messageTextFontSize:Float = VslConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.networkErrorButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
+        buttonText:String = VslConfig.networkErrorButtonText,
+        buttonTextSize:Float = VslConfig.networkErrorButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.networkErrorButtonDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.networkErrorButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = VslConfig.networkErrorButtonStartDrawableRes,
+        @ColorRes backgroundColor:Int = VslConfig.networkErrorViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
        binding.networkErrorView(
@@ -104,22 +114,24 @@ class ConstraintLayout : ConstraintLayout {
            buttonDrawable = buttonDrawable,
            buttonStartDrawable = buttonStartDrawable,
            buttonTextColor = buttonTextColor,
+           backgroundColor = backgroundColor,
            refreshCallback = refreshCallback,
        )
     }
 
     fun networkErrorView(
-        @DrawableRes errorImage:Int = ViewStateLayoutConfig.networkErrorImageDrawableRes,
-        title:String = ViewStateLayoutConfig.networkErrorTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = ViewStateLayoutConfig.networkErrorMessageText,
-        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
+        @DrawableRes errorImage:Int = VslConfig.networkErrorImageDrawableRes,
+        title:String = VslConfig.networkErrorTitleText,
+        titleTextFontSize:Float = VslConfig.networkErrorTitleTextSize,
+        message:String = VslConfig.networkErrorMessageText,
+        messageTextFontSize:Float = VslConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.networkErrorButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
+        buttonText:String = VslConfig.networkErrorButtonText,
+        buttonTextSize:Float = VslConfig.networkErrorButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.networkErrorButtonDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.networkErrorButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = VslConfig.networkErrorButtonStartDrawableRes,
+        @ColorRes backgroundColor:Int = VslConfig.networkErrorViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
         binding.networkErrorView(
@@ -134,23 +146,25 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonStartDrawable = buttonStartDrawable,
             buttonTextColor = buttonTextColor,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("networkErrorLottieView"))
     fun showLottieNetworkErrorLayout(
-        @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImageRawRes,
-        title:String = ViewStateLayoutConfig.networkErrorTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = ViewStateLayoutConfig.networkErrorMessageText,
-        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
+        @RawRes lottieRes:Int = VslConfig.networkErrorLottieImageRawRes,
+        title:String = VslConfig.networkErrorTitleText,
+        titleTextFontSize:Float = VslConfig.networkErrorTitleTextSize,
+        message:String = VslConfig.networkErrorMessageText,
+        messageTextFontSize:Float = VslConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.networkErrorButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
+        buttonText:String = VslConfig.networkErrorButtonText,
+        buttonTextSize:Float = VslConfig.networkErrorButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.networkErrorButtonDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.networkErrorButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = VslConfig.networkErrorButtonStartDrawableRes,
+        @ColorRes backgroundColor:Int = VslConfig.networkErrorViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
         binding.networkErrorLottieView(
@@ -165,22 +179,24 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
 
     fun networkErrorLottieView(
-        @RawRes lottieRes:Int = ViewStateLayoutConfig.networkErrorLottieImageRawRes,
-        title:String = ViewStateLayoutConfig.networkErrorTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.networkErrorTitleTextSize,
-        message:String = ViewStateLayoutConfig.networkErrorMessageText,
-        messageTextFontSize:Float = ViewStateLayoutConfig.networkErrorMessageTextSize,
+        @RawRes lottieRes:Int = VslConfig.networkErrorLottieImageRawRes,
+        title:String = VslConfig.networkErrorTitleText,
+        titleTextFontSize:Float = VslConfig.networkErrorTitleTextSize,
+        message:String = VslConfig.networkErrorMessageText,
+        messageTextFontSize:Float = VslConfig.networkErrorMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.networkErrorButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.networkErrorButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.networkErrorButtonDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.networkErrorButtonTextColor,
-        @DrawableRes buttonStartDrawable:Int? = ViewStateLayoutConfig.networkErrorButtonStartDrawableRes,
+        buttonText:String = VslConfig.networkErrorButtonText,
+        buttonTextSize:Float = VslConfig.networkErrorButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.networkErrorButtonDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.networkErrorButtonTextColor,
+        @DrawableRes buttonStartDrawable:Int? = VslConfig.networkErrorButtonStartDrawableRes,
+        @ColorRes backgroundColor:Int = VslConfig.networkErrorViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
         binding.networkErrorLottieView(
@@ -195,6 +211,7 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
@@ -221,17 +238,18 @@ class ConstraintLayout : ConstraintLayout {
     **/
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyView"))
     fun showSimpleDataEmptyLayout(
-        @DrawableRes emptyImage:Int = ViewStateLayoutConfig.dataEmptyImageDrawableRes,
-        title: String = ViewStateLayoutConfig.dataEmptyTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
-        message:String = ViewStateLayoutConfig.dataEmptyMessageText,
-        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
+        @DrawableRes emptyImage:Int = VslConfig.dataEmptyImageDrawableRes,
+        title: String = VslConfig.dataEmptyTitleText,
+        titleTextFontSize:Float = VslConfig.dataEmptyTitleTextSize,
+        message:String = VslConfig.dataEmptyMessageText,
+        messageTextFontSize: Float = VslConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.dataEmptyButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        buttonText:String = VslConfig.dataEmptyButtonText,
+        buttonTextSize:Float = VslConfig.dataEmptyButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.dataEmptyButtonBgDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
+        @ColorRes backgroundColor:Int = VslConfig.dataEmptyViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
         binding.dataEmptyView(
@@ -246,21 +264,23 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
 
     fun dataEmptyView(
-        @DrawableRes emptyImage:Int = ViewStateLayoutConfig.dataEmptyImageDrawableRes,
-        title: String = ViewStateLayoutConfig.dataEmptyTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
-        message:String = ViewStateLayoutConfig.dataEmptyMessageText,
-        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
+        @DrawableRes emptyImage:Int = VslConfig.dataEmptyImageDrawableRes,
+        title: String = VslConfig.dataEmptyTitleText,
+        titleTextFontSize:Float = VslConfig.dataEmptyTitleTextSize,
+        message:String = VslConfig.dataEmptyMessageText,
+        messageTextFontSize: Float = VslConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.dataEmptyButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        buttonText:String = VslConfig.dataEmptyButtonText,
+        buttonTextSize:Float = VslConfig.dataEmptyButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.dataEmptyButtonBgDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.dataEmptyButtonTextColor,
+        @ColorRes backgroundColor:Int = VslConfig.dataEmptyViewBackgroundResources,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit
     ){
@@ -276,22 +296,24 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("dataEmptyLottieView"))
     fun showLottieDataEmptyLayout(
-        lottieRes:Int = ViewStateLayoutConfig.dataEmptyLottieImageRawRes,
-        title: String = ViewStateLayoutConfig.dataEmptyTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
-        message:String = ViewStateLayoutConfig.dataEmptyMessageText,
-        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
+        lottieRes:Int = VslConfig.dataEmptyLottieImageRawRes,
+        title: String = VslConfig.dataEmptyTitleText,
+        titleTextFontSize:Float = VslConfig.dataEmptyTitleTextSize,
+        message:String = VslConfig.dataEmptyMessageText,
+        messageTextFontSize: Float = VslConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.dataEmptyButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        buttonText:String = VslConfig.dataEmptyButtonText,
+        buttonTextSize:Float = VslConfig.dataEmptyButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.dataEmptyButtonBgDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.dataEmptyButtonTextColor,
+        @ColorRes backgroundColor:Int = VslConfig.dataEmptyViewBackgroundResources,
         @DrawableRes buttonStartDrawable:Int? = null,
         refreshCallback:()->Unit = {}
     ){
@@ -307,22 +329,24 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }
 
     fun dataEmptyLottieView(
-        lottieRes:Int = ViewStateLayoutConfig.dataEmptyLottieImageRawRes,
-        title: String = ViewStateLayoutConfig.dataEmptyTitleText,
-        titleTextFontSize:Float = ViewStateLayoutConfig.dataEmptyTitleTextSize,
-        message:String = ViewStateLayoutConfig.dataEmptyMessageText,
-        messageTextFontSize: Float = ViewStateLayoutConfig.dataEmptyMessageTextSize,
+        lottieRes:Int = VslConfig.dataEmptyLottieImageRawRes,
+        title: String = VslConfig.dataEmptyTitleText,
+        titleTextFontSize:Float = VslConfig.dataEmptyTitleTextSize,
+        message:String = VslConfig.dataEmptyMessageText,
+        messageTextFontSize: Float = VslConfig.dataEmptyMessageTextSize,
         refreshButtonVisibility:Boolean = true,
-        buttonText:String = ViewStateLayoutConfig.dataEmptyButtonText,
-        buttonTextSize:Float = ViewStateLayoutConfig.dataEmptyButtonTextSize,
-        @DrawableRes buttonDrawable:Int = ViewStateLayoutConfig.dataEmptyButtonBgDrawableRes,
-        @ColorRes buttonTextColor:Int = ViewStateLayoutConfig.dataEmptyButtonTextColor,
+        buttonText:String = VslConfig.dataEmptyButtonText,
+        buttonTextSize:Float = VslConfig.dataEmptyButtonTextSize,
+        @DrawableRes buttonDrawable:Int = VslConfig.dataEmptyButtonBgDrawableRes,
+        @ColorRes buttonTextColor:Int = VslConfig.dataEmptyButtonTextColor,
         @DrawableRes buttonStartDrawable:Int? = null,
+        @ColorRes backgroundColor:Int = VslConfig.dataEmptyViewBackgroundResources,
         refreshCallback:()->Unit = {}
     ){
         binding.dataEmptyLottieView(
@@ -337,6 +361,7 @@ class ConstraintLayout : ConstraintLayout {
             buttonDrawable = buttonDrawable,
             buttonTextColor = buttonTextColor,
             buttonStartDrawable = buttonStartDrawable,
+            backgroundColor = backgroundColor,
             refreshCallback = refreshCallback,
         )
     }

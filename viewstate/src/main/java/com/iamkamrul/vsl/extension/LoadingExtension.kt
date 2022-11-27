@@ -9,10 +9,14 @@ import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
 // show simple progress bar
 internal fun ViewStateConstraintLayoutBinding.progressbarView(
     progressStatus:Boolean,
-    progressBarColor:Int
+    progressBarColor:Int,
+    backgroundColor:Int
 ){
     // hide all error layout
     progressBarConfig()
+
+    //set background color
+    incSimpleProgress.root.setBackgroundResource(backgroundColor)
 
     incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
     incSimpleProgress.simpleProgressParent.isVisible = progressStatus
@@ -23,10 +27,14 @@ internal fun ViewStateConstraintLayoutBinding.progressbarView(
 // show lottie progress bar
 internal fun ViewStateConstraintLayoutBinding.progressBarLottieView(
     progressStatus:Boolean,
-    @RawRes lottieRes:Int
+    lottieRes:Int,
+    backgroundColor: Int
 ){
     // hide all error layout
     progressBarConfig()
+
+    //set background color
+    incLottieProgressLayout.root.setBackgroundResource(backgroundColor)
 
     incLottieProgressLayout.lottieProgressBarLayout.isVisible = progressStatus
     incSimpleProgress.simpleProgressParent.isVisible = false

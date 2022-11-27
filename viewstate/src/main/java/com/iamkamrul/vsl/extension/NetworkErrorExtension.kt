@@ -18,10 +18,14 @@ fun ViewStateConstraintLayoutBinding.networkErrorView(
     buttonDrawable:Int,
     buttonStartDrawable:Int?,
     buttonTextColor:Int,
+    backgroundColor:Int,
     refreshCallback:()->Unit
 ){
     // hide all error layout
     networkErrorConfig()
+
+    //set background color
+    incSimpleErrorLayout.root.setBackgroundResource(backgroundColor)
 
     // show simple network error layout
     incSimpleErrorLayout.simpleErrorLayout.isVisible = true
@@ -67,10 +71,14 @@ fun ViewStateConstraintLayoutBinding.networkErrorLottieView(
     buttonDrawable:Int,
     buttonTextColor:Int,
     buttonStartDrawable:Int?,
+    backgroundColor:Int,
     refreshCallback:()->Unit
 ){
     // hide all error layout
     networkErrorConfig()
+
+    //set background color
+    incLottieErrorLayout.root.setBackgroundResource(backgroundColor)
 
     // show lottie network error layout
     incLottieErrorLayout.lottieErrorLayout.isVisible = true
