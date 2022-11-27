@@ -1,12 +1,11 @@
 # ViewStateLayout
-[![](https://jitpack.io/v/kamrul3288/ViewStateLayout.svg)](https://jitpack.io/#kamrul3288/ViewStateLayout)
-
 Easy way to manage common state templates like loading, empty, error etc.!
-
+</br>
+![](https://media.giphy.com/media/fi9ukg7uqeO5WZETTc/giphy.gif)
 # How to
 Step 1. Add the JitPack repository to your build file
 ----------------------------------------------------
-```
+```gradle
 allprojects {
   repositories {
     maven {url 'https://jitpack.io'}
@@ -15,17 +14,17 @@ allprojects {
 ```
 Step 2. Add the dependency
 --------------------------
-```
+```gradle
 dependencies {
-  implementation 'com.github.kamrul3288:ViewStateLayout:1.0.7'
+  implementation "com.github.kamrul3288:viewstatelayout:1.1.0"
 }
 ```
 
 Usage
 -----
-Then wrap a view which target area(view) to show states.
+Step 3.Just wrap a view which target area(view) to show states.
 ```xml
-<com.iamkamrul.library.ViewStateConstraintLayout
+<com.iamkamrul.vsl.ConstraintLayout
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -42,49 +41,48 @@ Then wrap a view which target area(view) to show states.
           android:layout_height="0dp"/>
         
         
- </com.iamkamrul.library.ViewStateConstraintLayout>
+ </com.iamkamrul.vsl.ConstraintLayout>
 ```
 
-Finally in your activity/fragment get reference and call showXXX methods
+Finally in your activity/fragment get reference and call the methods
+# Progressbar
 ```kotlin
-binding.root.setSimpleProgressBarStatus(true)
-binding.root.showSimpleNetworkError {
-  // refresh button call
-}
+binding.root.progressbarView(true)
+binding.root.progressBarLottieView(true)
 ```
-# API(Also support lottie animation) and customization
+# Network Error
 ```kotlin
-fun setSimpleProgressBarStatus(status:Boolean, progressBarColor:Int = R.color.orange)
-```
-```kotlin
-fun showSimpleNetworkError(
-errorImage:Int = R.drawable.ic_no_internet,
-title:String = context.getString(R.string.title_no_internet),
-message:String = context.getString(R.string.message_no_internet),
-buttonText:String = context.getString(R.string.button_refresh),
-buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-buttonTextColor:Int = R.color.white,
-refreshCallback:()->Unit
+binding.root.networkErrorView(  //also you can call networkErrorLottieView
+    title = "Something went wrong",
+    message = "Check your network connection",
+    refreshCallback = {
+        //call your api again to refresh
+    }
 )
 ```
+# Data Empty
 ```kotlin
-fun hideSimpleNetworkError()
-```
-```kotlin
-fun showSimpleDataEmptyView(
-emptyImage:Int = R.drawable.ic_no_result,
-message:String = context.getString(R.string.message_no_data_found),
-buttonText:String = context.getString(R.string.button_refresh),
-buttonDrawable:Int = R.drawable.bg_orange_border_radius_30,
-buttonTextColor:Int = R.color.white,
-refreshCallback:()->Unit
+ binding.root.dataEmptyView(
+    title = "Lorem Ipsum",
+    message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    refreshCallback = {
+        // refresh your data source again
+    }
 )
 ```
+# Global Config
 ```kotlin
-fun hideSimpleDataEmptyView()
+VslConfig.progressBarColor = R.color.purple_700
+VslConfig.networkErrorButtonDrawableRes = R.drawable.exaple_vsl_button_bg
+VslConfig.networkErrorButtonTextColor = R.color.black
+VslConfig.dataEmptyButtonBgDrawableRes = R.drawable.exaple_vsl_button_bg
+VslConfig.dataEmptyButtonTextColor = R.color.black
+VslConfig.networkErrorButtonStartDrawableRes = R.drawable.ic_add
+//and may more
 ```
-
-<img src="https://user-images.githubusercontent.com/27208120/157304915-e0c2584d-2037-45c0-ac54-23f70e02901a.png" width=300 />  <img src="https://user-images.githubusercontent.com/27208120/157304569-ea6ec69c-f565-453b-8125-09433fa48fa7.png" width=300 />     <img src="https://user-images.githubusercontent.com/27208120/157305301-7b2ab3fc-bf63-47ae-b365-7daa160210ab.png" width=300 />
+```diff
+! Note: Always set your card elevation 0dp or Wrap inside Framelayout
+```
 
 
 License
