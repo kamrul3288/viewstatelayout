@@ -4,10 +4,9 @@
 ### Table of content
 - [XML Configuration](#xml-configuration)
 - [Progressbar](#progressbar)
-- [Customize Progressbar](#parsing)
-- [Network Error View](#customize-progressbar)
-- [Customize Network Error View](#network-error-view)
-- [Get String date time in Date Object](#customize-network-error-view)
+- [Customize Progressbar](#customize-progressbar)
+- [Network Error View](#network-error-view)
+- [Customize Network Error View](#customize-network-error-view)
 - [Data Empty View](#data-empty-view)
 - [Customize Data Empty View](#customize-data-empty-view)
 - [Global Configuration](#global-configuration)
