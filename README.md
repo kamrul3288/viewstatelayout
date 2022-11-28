@@ -1,10 +1,8 @@
 # ViewStateLayout
 Easy way to manage common state templates like loading, empty, error etc.!
-</br>
+### [Full Documentation](doc)
 ![](https://media.giphy.com/media/fi9ukg7uqeO5WZETTc/giphy.gif)
-# How to
-Step 1. Add the JitPack repository to your build file
-----------------------------------------------------
+### Step 1. Add the JitPack repository to your build file
 ```gradle
 allprojects {
   repositories {
@@ -12,17 +10,14 @@ allprojects {
   }
 }
 ```
-Step 2. Add the dependency
---------------------------
+### Step 2. Add the dependency
 ```gradle
 dependencies {
   implementation "com.github.kamrul3288:viewstatelayout:1.1.0"
 }
 ```
 
-Usage
------
-Step 3.Just wrap a view which target area(view) to show states.
+### Step 3.Just wrap a view which target area(view) to show states.
 ```xml
 <com.iamkamrul.vsl.ConstraintLayout
     app:layout_constraintEnd_toEndOf="parent"
@@ -44,13 +39,13 @@ Step 3.Just wrap a view which target area(view) to show states.
  </com.iamkamrul.vsl.ConstraintLayout>
 ```
 
-Finally in your activity/fragment get reference and call the methods
-# Progressbar
+### Finally in your activity/fragment get reference and call the methods
+### Progressbar
 ```kotlin
 binding.root.progressbarView(true)
 binding.root.progressBarLottieView(true)
 ```
-# Network Error
+### Network Error
 ```kotlin
 binding.root.networkErrorView(  //also you can call networkErrorLottieView
     title = "Something went wrong",
@@ -60,7 +55,7 @@ binding.root.networkErrorView(  //also you can call networkErrorLottieView
     }
 )
 ```
-# Data Empty
+### Data Empty
 ```kotlin
  binding.root.dataEmptyView(
     title = "Lorem Ipsum",
@@ -70,7 +65,7 @@ binding.root.networkErrorView(  //also you can call networkErrorLottieView
     }
 )
 ```
-# Global Config
+### Global Config
 ```kotlin
 VslConfig.progressBarColor = R.color.purple_700
 VslConfig.networkErrorButtonDrawableRes = R.drawable.exaple_vsl_button_bg
