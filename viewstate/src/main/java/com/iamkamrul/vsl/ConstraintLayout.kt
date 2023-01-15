@@ -9,6 +9,7 @@ import androidx.annotation.RawRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
 import com.iamkamrul.vsl.extension.*
+import com.iamkamrul.vsl.utils.resetViewState
 
 class ConstraintLayout : ConstraintLayout {
 
@@ -218,11 +219,11 @@ class ConstraintLayout : ConstraintLayout {
 
     //gone networkError
     fun goneNetworkErrorView(){
-        binding.goneNetworkErrorView()
+        binding.resetViewState()
     }
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("goneNetworkErrorView"))
     fun hideNetworkErrorLayout(){
-        binding.goneNetworkErrorView()
+        binding.resetViewState()
     }
 
 
@@ -369,12 +370,12 @@ class ConstraintLayout : ConstraintLayout {
 
     //gone data empty error
     fun goneDataEmptyView(){
-        binding.goneDataEmptyView()
+        binding.resetViewState()
     }
 
     @Deprecated(message = "Naming convention mismatch", replaceWith = ReplaceWith("goneDataEmptyView"))
     fun hideDataEmptyLayout(){
-        binding.goneDataEmptyView()
+        binding.resetViewState()
     }
 
 }

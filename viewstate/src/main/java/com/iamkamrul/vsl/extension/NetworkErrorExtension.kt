@@ -3,7 +3,9 @@ package com.iamkamrul.vsl.extension
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.vsl.utils.changeMainViewVisibility
 import com.iamkamrul.vsl.utils.clickWithDebounce
+import com.iamkamrul.vsl.utils.resetViewState
 
 //--------show simple network error layout------------
 fun ViewStateConstraintLayoutBinding.networkErrorView(
@@ -22,15 +24,14 @@ fun ViewStateConstraintLayoutBinding.networkErrorView(
     refreshCallback:()->Unit
 ){
     // hide all error layout
-    networkErrorConfig()
+    resetViewState()
 
     //set background color
     incSimpleErrorLayout.root.setBackgroundResource(backgroundColor)
 
     // show simple network error layout
     incSimpleErrorLayout.simpleErrorLayout.isVisible = true
-    // hide lottie network error layout
-    incLottieErrorLayout.lottieErrorLayout.isVisible = false
+
     //set refresh button visibility
     incSimpleErrorLayout.networkErrorRefreshBtn.isVisible = refreshButtonVisibility
 
@@ -56,6 +57,9 @@ fun ViewStateConstraintLayoutBinding.networkErrorView(
     buttonStartDrawable?.let {
         incSimpleErrorLayout.networkErrorRefreshBtn.setCompoundDrawablesWithIntrinsicBounds(it,0,0,0)
     }
+
+    //main view visibility
+    changeMainViewVisibility(status = true)
 }
 
 //--------show simple lottie error layout------------
@@ -75,15 +79,14 @@ fun ViewStateConstraintLayoutBinding.networkErrorLottieView(
     refreshCallback:()->Unit
 ){
     // hide all error layout
-    networkErrorConfig()
+    resetViewState()
 
     //set background color
     incLottieErrorLayout.root.setBackgroundResource(backgroundColor)
 
     // show lottie network error layout
     incLottieErrorLayout.lottieErrorLayout.isVisible = true
-    // hide simple network error layout
-    incSimpleErrorLayout.simpleErrorLayout.isVisible = false
+
     //set refresh button visibility
     incLottieErrorLayout.networkErrorRefreshBtn.isVisible = refreshButtonVisibility
 
@@ -109,16 +112,7 @@ fun ViewStateConstraintLayoutBinding.networkErrorLottieView(
     buttonStartDrawable?.let {
         incLottieErrorLayout.networkErrorRefreshBtn.setCompoundDrawablesWithIntrinsicBounds(it,0,0,0)
     }
-}
 
-private fun ViewStateConstraintLayoutBinding.networkErrorConfig(){
-    hideProgressLayout()
-    goneDataEmptyView()
-}
-
-
-fun ViewStateConstraintLayoutBinding.goneNetworkErrorView(){
-    incSimpleErrorLayout.simpleErrorLayout.isVisible = false
-    incLottieErrorLayout.lottieErrorLayout.isVisible = false
-    incLottieErrorLayout.networkErrorIv.cancelAnimation()
+    //main view visibility
+    changeMainViewVisibility(status = true)
 }

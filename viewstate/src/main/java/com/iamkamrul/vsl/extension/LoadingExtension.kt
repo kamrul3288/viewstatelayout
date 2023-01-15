@@ -1,11 +1,11 @@
 package com.iamkamrul.vsl.extension
 
 import android.content.res.ColorStateList
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.view.forEach
 import androidx.core.view.isVisible
 import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
+import com.iamkamrul.vsl.utils.changeMainViewVisibility
+import com.iamkamrul.vsl.utils.resetViewState
 
 // show simple progress bar
 internal fun ViewStateConstraintLayoutBinding.progressbarView(
@@ -14,14 +14,16 @@ internal fun ViewStateConstraintLayoutBinding.progressbarView(
     backgroundColor:Int
 ){
     // hide all error layout
-    progressBarConfig(progressStatus)
+    resetViewState()
 
     //set background color
     incSimpleProgress.root.setBackgroundResource(backgroundColor)
 
     incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
     incSimpleProgress.simpleProgressParent.isVisible = progressStatus
-    incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
+
+    //main view visibility
+    changeMainViewVisibility(progressStatus)
 
 }
 
@@ -33,34 +35,19 @@ internal fun ViewStateConstraintLayoutBinding.progressBarLottieView(
     backgroundColor: Int
 ){
     // hide all error layout
-    progressBarConfig(progressStatus)
+    resetViewState()
 
     //set background color
     incLottieProgressLayout.root.setBackgroundResource(backgroundColor)
 
     incLottieProgressLayout.lottieProgressBarLayout.isVisible = progressStatus
-    incSimpleProgress.simpleProgressParent.isVisible = false
     if (progressStatus){
         incLottieProgressLayout.lottieProgressBar.setAnimation(lottieRes)
         incLottieProgressLayout.lottieProgressBar.playAnimation()
     }else{
         incLottieProgressLayout.lottieProgressBar.cancelAnimation()
     }
-}
 
-private fun ViewStateConstraintLayoutBinding.progressBarConfig(progressStatus:Boolean){
-    (parentCl.parent as ViewGroup).forEach {
-        if (it.id != parentCl.id){
-            it.isVisible = !progressStatus
-        }
-    }
-    goneDataEmptyView()
-    goneNetworkErrorView()
-}
-
-// hide progress bar when network error & data empty error showing
-internal fun ViewStateConstraintLayoutBinding.hideProgressLayout(){
-    incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
-    incLottieProgressLayout.lottieProgressBar.cancelAnimation()
-    incSimpleProgress.simpleProgressParent.isVisible = false
+    //main view visibility
+    changeMainViewVisibility(progressStatus)
 }
