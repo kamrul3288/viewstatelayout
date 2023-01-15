@@ -1,8 +1,9 @@
 package com.iamkamrul.vsl.extension
 
 import android.content.res.ColorStateList
-import androidx.annotation.RawRes
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.forEach
 import androidx.core.view.isVisible
 import com.iamkamrul.vsl.databinding.ViewStateConstraintLayoutBinding
 
@@ -13,7 +14,7 @@ internal fun ViewStateConstraintLayoutBinding.progressbarView(
     backgroundColor:Int
 ){
     // hide all error layout
-    progressBarConfig()
+    progressBarConfig(progressStatus)
 
     //set background color
     incSimpleProgress.root.setBackgroundResource(backgroundColor)
@@ -21,6 +22,7 @@ internal fun ViewStateConstraintLayoutBinding.progressbarView(
     incSimpleProgress.progressBar.indeterminateTintList = ColorStateList.valueOf(ContextCompat.getColor(parentCl.context,progressBarColor))
     incSimpleProgress.simpleProgressParent.isVisible = progressStatus
     incLottieProgressLayout.lottieProgressBarLayout.isVisible = false
+
 }
 
 
@@ -31,7 +33,7 @@ internal fun ViewStateConstraintLayoutBinding.progressBarLottieView(
     backgroundColor: Int
 ){
     // hide all error layout
-    progressBarConfig()
+    progressBarConfig(progressStatus)
 
     //set background color
     incLottieProgressLayout.root.setBackgroundResource(backgroundColor)
@@ -46,7 +48,12 @@ internal fun ViewStateConstraintLayoutBinding.progressBarLottieView(
     }
 }
 
-private fun ViewStateConstraintLayoutBinding.progressBarConfig(){
+private fun ViewStateConstraintLayoutBinding.progressBarConfig(progressStatus:Boolean){
+    (parentCl.parent as ViewGroup).forEach {
+        if (it.id != parentCl.id){
+            it.isVisible = !progressStatus
+        }
+    }
     goneDataEmptyView()
     goneNetworkErrorView()
 }
