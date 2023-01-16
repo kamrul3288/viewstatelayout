@@ -13,7 +13,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```gradle
 dependencies {
-  implementation "com.github.kamrul3288:viewstatelayout:1.1.0"
+  implementation "com.github.kamrul3288:viewstatelayout:1.1.1"
 }
 ```
 
@@ -75,9 +75,7 @@ VslConfig.dataEmptyButtonTextColor = R.color.black
 VslConfig.networkErrorButtonStartDrawableRes = R.drawable.ic_add
 //and may more
 ```
-```diff
-! Note: Always set your card elevation 0dp or Wrap inside Framelayout
-```
+
 
 
 License
